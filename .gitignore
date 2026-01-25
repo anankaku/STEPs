@@ -1,0 +1,20 @@
+# HPC / MD outputs
+*.log
+*.out
+*.err
+
+*.dcd
+*.xtc
+*.trr
+*.nc
+*.mdcrd
+*.rst7
+*.gro
+*.cpt
+
+output/
+outputs/
+traj/
+trajectories/
+scratch/
+tmp/
