@@ -1,0 +1,7 @@
+Fragment_SMILES,Capped_SMILES
+*N(Cc1c(F)cccc1)CC(=O)*,CC(=O)N(c1c(cccc1)F)CC(=O)N(C)C
+*N([C@H](C)C1CCCCC1)CC(=O)*,CC(=O)N([C@H](C)C1CCCCC1)CC(=O)N(C)C
+*N(CCc1ccc(Cl)cc1)CC(=O)*,CC(=O)N(CCc1ccc(Cl)cc1)CC(=O)N(C)C
+*N([C@@H](C)C1CCCCC1)CC(=O)*,CC(=O)N([C@@H](C)C1CCCCC1)CC(=O)N(C)C
+*N(CCc1ccc(OC)c(OC)c1)CC(=O)*,CC(=O)N(CCc1ccc(OC)c(OC)c1)CC(=O)N(C)C
+*N([C@H]1[C@H](OCc2ccccc2)CCC1)CC(=O)*,CC(=O)N([C@H]1[C@H](OCc2ccccc2)CCC1)CC(=O)N(C)C
