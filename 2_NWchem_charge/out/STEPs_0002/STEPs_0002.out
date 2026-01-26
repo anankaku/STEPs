@@ -985,3 +985,5 @@ task esp
  Grid integrated density:     140.000145509833
  Requested integration accuracy:   0.10E-05
  d= 0,ls=0.5,diis     7   -806.2602933477 -5.02D-01  3.08D+00  1.02D+01  4064.2
+ d= 0,ls=0.5,diis     8   -806.5752577396 -3.15D-01  1.33D+00  9.74D+00  4606.1
+ d= 0,ls=0.5,diis     9   -806.7335056714 -1.58D-01  6.97D-01  9.39D+00  5149.5
