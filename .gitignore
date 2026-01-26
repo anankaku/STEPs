@@ -1,6 +1,6 @@
 # HPC / MD outputs
 *.log
-*.out
+#*.out
 *.err
 
 *.dcd
