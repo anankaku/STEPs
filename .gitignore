@@ -3,10 +3,10 @@
 #*.out
 *.err
 
-*b
-*b^-1
-*c
-*db
+*.b
+*.b^-1
+*.c
+*.db
 *.movecs
 *.p
 *.zmat
