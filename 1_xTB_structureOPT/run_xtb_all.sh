@@ -28,7 +28,7 @@ echo "[INFO] xtb = $(which xtb)"
 xtb --version
 
 # --- input / output paths ---
-SRC="$SLURM_SUBMIT_DIR/../0_openBable_SMILES/xyz_out"
+SRC="$SLURM_SUBMIT_DIR/../0_openBable_SMILES/out/xyz"
 OUT="$SLURM_SUBMIT_DIR/runs"
 
 echo "[INFO] SRC = $SRC"
