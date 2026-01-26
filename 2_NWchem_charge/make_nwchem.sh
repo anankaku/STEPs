@@ -2,7 +2,7 @@
 set -euo pipefail
 
 TEMPLATE="template_base.nw"
-OUTROOT="outputs"
+OUTROOT="out"
 mkdir -p "${OUTROOT}"
 
 read -r -p "Enter xyz file path: " XYZ

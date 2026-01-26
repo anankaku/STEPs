@@ -61,9 +61,9 @@ task dft energy
 esp
   constrain 0 15 16 17 27 28 29 30 31 32
   constrain 0 1 2 3 18 19 20
-  constrain equel 25 26
-  constrain equel 16 17
-  constrain equel 27 28 29 30 31 32
+  constrain equal 25 26
+  constrain equal 16 17
+  constrain equal 27 28 29 30 31 32
 end
 
 task esp

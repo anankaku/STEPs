@@ -66,9 +66,9 @@ task dft energy
 esp
   constrain 0 15 16 17 27 28 29 30 31 32
   constrain 0 1 2 3 18 19 20
-  constrain equel 25 26
-  constrain equel 16 17
-  constrain equel 27 28 29 30 31 32
+  constrain equal 25 26
+  constrain equal 16 17
+  constrain equal 27 28 29 30 31 32
 end
 
 task esp
@@ -114,7 +114,7 @@ task esp
 
     hostname        = c01
     program         = nwchem
-    date            = Mon Jan 26 01:40:39 2026
+    date            = Mon Jan 26 13:27:11 2026
 
     compiled        = Wed_Dec_10_07:06:05_2025
     source          = /home/conda/feedstock_root/build_artifacts/bld/rattler-build_nwchem_1765343023/work
@@ -818,8 +818,8 @@ task esp
  HOMO         =      -0.265574
  LUMO         =      -0.019449
 
-   Time after variat. SCF:    177.0
-   Time prior to 1st pass:    177.0
+   Time after variat. SCF:    177.4
+   Time prior to 1st pass:    177.4
 
  Grid_pts file          = ./STEPs_0001.gridpts.0
  Record size in doubles =  12289        No. of grid_pts per rec  =   3070
@@ -834,53 +834,53 @@ task esp
 
    convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time
  ---------------- ----- ----------------- --------- --------- ---------  ------
- d= 0,ls=0.0,diis     1   -827.1633409796 -2.09D+03  1.25D+01  1.50D+01   383.2
+ d= 0,ls=0.0,diis     1   -827.1633409796 -2.09D+03  1.25D+01  1.50D+01   383.9
  Grid integrated density:     126.000239016318
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.0,diis     2   -819.5270909365  7.64D+00  4.55D-01  2.88D+01   630.5
+ d= 0,ls=0.0,diis     2   -819.5270909365  7.64D+00  4.55D-01  2.88D+01   631.8
  Grid integrated density:     126.000247258349
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.0,diis     3   -821.6934945239 -2.17D+00  4.36D-01  1.73D+01   877.8
+ d= 0,ls=0.0,diis     3   -821.6934945239 -2.17D+00  4.36D-01  1.73D+01   879.6
  Grid integrated density:     126.000275677586
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis     4   -823.1511527056 -1.46D+00  4.09D-01  4.56D+00  1125.0
+ d= 0,ls=0.5,diis     4   -823.1511527056 -1.46D+00  4.09D-01  4.56D+00  1127.4
  Grid integrated density:     126.000291645926
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis     5   -823.4341064937 -2.83D-01  5.93D-01  2.80D+00  1372.3
+ d= 0,ls=0.5,diis     5   -823.4341064937 -2.83D-01  5.93D-01  2.80D+00  1375.2
  Grid integrated density:     126.000310104030
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis     6   -823.6203952934 -1.86D-01  7.46D-01  1.93D+00  1619.5
+ d= 0,ls=0.5,diis     6   -823.6203952934 -1.86D-01  7.46D-01  1.93D+00  1623.0
  Grid integrated density:     126.000334660156
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis     7   -823.7658036706 -1.45D-01  7.52D-01  1.45D+00  1866.7
+ d= 0,ls=0.5,diis     7   -823.7658036706 -1.45D-01  7.52D-01  1.45D+00  1870.7
  Grid integrated density:     126.000350247457
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis     8   -823.8974530552 -1.32D-01  1.66D+00  1.11D+00  2113.9
+ d= 0,ls=0.5,diis     8   -823.8974530552 -1.32D-01  1.66D+00  1.11D+00  2118.4
  Grid integrated density:     126.000348237778
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis     9   -824.2066078830 -3.09D-01  3.66D+00  1.30D+00  2360.7
+ d= 0,ls=0.5,diis     9   -824.2066078830 -3.09D-01  3.66D+00  1.30D+00  2365.8
  Grid integrated density:     126.000323283887
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis    10   -824.7519197285 -5.45D-01  2.24D+00  1.53D+00  2600.0
+ d= 0,ls=0.5,diis    10   -824.7519197285 -5.45D-01  2.24D+00  1.53D+00  2605.6
  Grid integrated density:     126.000312295341
  Requested integration accuracy:   0.10E-05
- d= 0,ls=0.5,diis    11   -825.1144391814 -3.63D-01  5.94D+00  9.22D-01  2838.6
- d= 0,ls=0.5,diis    12   -826.1879873039 -1.07D+00  2.25D-01  9.14D-01  3056.7
- d= 0,ls=0.5,diis    13   -826.2838131583 -9.58D-02  5.53D-02  4.11D-01  3262.1
+ d= 0,ls=0.5,diis    11   -825.1144391814 -3.63D-01  5.94D+00  9.22D-01  2844.7
+ d= 0,ls=0.5,diis    12   -826.1879873039 -1.07D+00  2.25D-01  9.14D-01  3063.4
+ d= 0,ls=0.5,diis    13   -826.2838131583 -9.58D-02  5.53D-02  4.11D-01  3269.2
   Resetting Diis
- d= 0,ls=0.5,diis    14   -826.3319194076 -4.81D-02  1.47D-02  1.42D-01  3466.1
- d= 0,ls=0.5,diis    15   -826.3539709132 -2.21D-02  4.41D-03  2.48D-02  3671.3
- d= 0,ls=0.5,diis    16   -826.3588176418 -4.85D-03  1.77D-03  7.05D-03  3876.6
- d= 0,ls=0.5,diis    17   -826.3598493174 -1.03D-03  8.87D-04  1.09D-03  4081.8
- d= 0,ls=0.5,diis    18   -826.3600983526 -2.49D-04  4.90D-04  3.05D-04  4287.1
- d= 0,ls=0.5,diis    19   -826.3601828780 -8.45D-05  2.76D-04  6.48D-05  4492.3
- d= 0,ls=0.5,diis    20   -826.3602115094 -2.86D-05  1.58D-04  2.87D-05  4697.6
- d= 0,ls=0.5,diis    21   -826.3602234501 -1.19D-05  9.07D-05  9.56D-06  4902.8
- d= 0,ls=0.5,diis    22   -826.3602282568 -4.81D-06  5.26D-05  4.11D-06  5108.1
- d= 0,ls=0.5,diis    23   -826.3602302651 -2.01D-06  3.09D-05  1.60D-06  5313.4
- d= 0,ls=0.5,diis    24   -826.3602310732 -8.08D-07  1.84D-05  7.94D-07  5518.7
- d= 0,ls=0.5,diis    25   -826.3602314257 -3.52D-07  1.11D-05  3.14D-07  5724.0
- d= 0,ls=0.5,diis    26   -826.3602315704 -1.45D-07  6.77D-06  1.47D-07  5929.2
+ d= 0,ls=0.5,diis    14   -826.3319194076 -4.81D-02  1.47D-02  1.42D-01  3473.5
+ d= 0,ls=0.5,diis    15   -826.3539709132 -2.21D-02  4.41D-03  2.48D-02  3679.2
+ d= 0,ls=0.5,diis    16   -826.3588176418 -4.85D-03  1.77D-03  7.05D-03  3884.9
+ d= 0,ls=0.5,diis    17   -826.3598493174 -1.03D-03  8.87D-04  1.09D-03  4090.5
+ d= 0,ls=0.5,diis    18   -826.3600983526 -2.49D-04  4.90D-04  3.05D-04  4296.2
+ d= 0,ls=0.5,diis    19   -826.3601828780 -8.45D-05  2.76D-04  6.48D-05  4501.9
+ d= 0,ls=0.5,diis    20   -826.3602115094 -2.86D-05  1.58D-04  2.87D-05  4707.6
+ d= 0,ls=0.5,diis    21   -826.3602234501 -1.19D-05  9.07D-05  9.56D-06  4913.3
+ d= 0,ls=0.5,diis    22   -826.3602282568 -4.81D-06  5.26D-05  4.11D-06  5119.0
+ d= 0,ls=0.5,diis    23   -826.3602302651 -2.01D-06  3.09D-05  1.60D-06  5324.7
+ d= 0,ls=0.5,diis    24   -826.3602310732 -8.08D-07  1.84D-05  7.94D-07  5530.3
+ d= 0,ls=0.5,diis    25   -826.3602314257 -3.52D-07  1.11D-05  3.14D-07  5736.0
+ d= 0,ls=0.5,diis    26   -826.3602315704 -1.45D-07  6.77D-06  1.47D-07  5941.7
 
 
          Total DFT energy =     -826.360231632765
@@ -891,7 +891,7 @@ task esp
 
  Numeric. integr. density =      125.999941852178
 
-     Total iterative time =   5957.3s
+     Total iterative time =   5969.9s
 
 
 
@@ -5779,4 +5779,193 @@ task esp
      2   0 0 2    -74.660572   -318.941622   -318.941622    563.222673
 
 
- Task  times  cpu:     6134.8s     wall:     6134.8s
+ Task  times  cpu:     6147.8s     wall:     6147.8s
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+
+
+                     NWChem Electrostatic Potential Fit Module
+                     -----------------------------------------
+
+
+ Atom parameters
+
+ Number of atoms is                                   32
+ Number of basis functions is                        496
+
+
+ Grid parameters
+
+ Maximum number of grid points is                   5559
+ Number of grid points is                           5558
+ Grid range                                     0.300000 nm
+ Grid spacing                                   0.050000 nm
+ Probe radius                                   0.070000 nm
+ Atom radius factor                             1.000000
+
+
+ Constraint parameters
+
+ Constraint charge    0.000000 on atoms   15   16   17   27   28   29   30   31   32
+ Constraint charge    0.000000 on atoms    1    2    3   18   19   20
+ Constraint charge    0.000000 on atoms  -25   26
+ Constraint charge    0.000000 on atoms  -16   17
+ Constraint charge    0.000000 on atoms  -27   28
+ Constraint charge    0.000000 on atoms  -27   29
+ Constraint charge    0.000000 on atoms  -27   30
+ Constraint charge    0.000000 on atoms  -27   31
+ Constraint charge    0.000000 on atoms  -27   32
+
+ Atomic radii
+
+    1    0.100000
+    6    0.147000
+    7    0.140000
+    8    0.136000
+    9    0.128000
+ FASTESP  F
+  using M.O. file = ./STEPs_0001.movecs
+
+
+    Atom              Coordinates                           Charge
+
+                                                  ESP         ESP   
+                                                             constr 
+ 
+    1 C     0.279138   -0.142063    0.070878   -0.219403   -0.291620
+    2 C     0.221609   -0.013827    0.015578    0.627099    0.693934
+    3 O     0.288492    0.086247   -0.000610   -0.607867   -0.611229
+    4 N     0.090417   -0.017891   -0.021449   -0.245906   -0.254115
+    5 C     0.004338   -0.126924    0.003645    0.168570    0.130571
+    6 C    -0.056456   -0.194496   -0.101966    0.322680    0.345772
+    7 C    -0.141504   -0.301400   -0.081583   -0.287237   -0.301768
+    8 C    -0.167434   -0.342837    0.047862   -0.066070   -0.058558
+    9 C    -0.109271   -0.276457    0.154630   -0.145396   -0.145829
+   10 C    -0.024508   -0.169419    0.132897   -0.144271   -0.133478
+   11 F    -0.031540   -0.154917   -0.229076   -0.264116   -0.265515
+   12 C     0.032074    0.102308   -0.077325    0.099868   -0.043612
+   13 C    -0.045646    0.178803    0.029938    0.428626    0.611656
+   14 O    -0.069751    0.129908    0.138679   -0.556074   -0.571318
+   15 N    -0.086195    0.302722   -0.005362   -0.118277   -0.336063
+   16 C    -0.053820    0.364495   -0.131786    0.009193    0.164977
+   17 C    -0.152205    0.385908    0.092812    0.025476    0.164977
+   18 H     0.387003   -0.139299    0.057731    0.072277    0.080966
+   19 H     0.237749   -0.229289    0.021000    0.024694    0.051423
+   20 H     0.257891   -0.148984    0.177311    0.061465    0.076526
+   21 H    -0.185595   -0.350700   -0.166796    0.167425    0.169586
+   22 H    -0.233504   -0.426397    0.064995    0.109715    0.108455
+   23 H    -0.130848   -0.307642    0.255648    0.107051    0.107697
+   24 H     0.017879   -0.114988    0.215669    0.159091    0.152723
+   25 H    -0.034103    0.076865   -0.160517    0.037928    0.073867
+   26 H     0.115168    0.163290   -0.113780    0.061725    0.073867
+   27 H    -0.079935    0.299386   -0.215262    0.000409    0.001018
+   28 H     0.052539    0.389166   -0.138438    0.032148    0.001018
+   29 H    -0.111123    0.456528   -0.141015    0.050332    0.001018
+   30 H    -0.166478    0.326497    0.182838    0.050611    0.001018
+   31 H    -0.249262    0.419083    0.055437    0.009252    0.001018
+   32 H    -0.090892    0.473129    0.116515    0.028982    0.001018
+                                            ------------------------
+                                                0.000000    0.000000
+
+ Dipole moment                                  1.175212    1.196359
+
+ Quadrupole moment Qxx                        -21.364158  -20.577168
+                   Qyy                         31.570087   30.128476
+                   Qzz                        -10.205929   -9.551308
+
+ RMS deviation kJ/mol                           0.210466    0.216404
+
+ RRMS %                                        32.069492   32.974247
+
+ Task  times  cpu:       27.0s     wall:       27.0s
+ Summary of allocated global arrays
+-----------------------------------
+  No active global arrays
+
+
+MA_summarize_allocated_blocks: starting scan ...
+heap block 'gridpts', handle 127, address 0x555569f9ee60:
+	type of elements:		double precision
+	number of elements:		53582556
+	address of client space:	0x555569f9eec0
+	index for client space:		11368151
+	total number of bytes:		428660552
+MA_summarize_allocated_blocks: scan completed: 1 heap block, 0 stack blocks
+MA usage statistics:
+
+	allocation statistics:
+					      heap	     stack
+					      ----	     -----
+	current number of blocks	         1	         0
+	maximum number of blocks	        21	        58
+	current total bytes		 428660552	         0
+	maximum total bytes		 451988616	  25522264
+	maximum total K-bytes		    451989	     25523
+	maximum total M-bytes		       452	        26
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+
+
+                                     CITATION
+                                     --------
+                Please cite the following reference when publishing
+                           results obtained with NWChem:
+
+          E. Apra, E. J. Bylaska, W. A. de Jong, N. Govind, K. Kowalski,
+       T. P. Straatsma, M. Valiev, H. J. J. van Dam, Y. Alexeev, J. Anchell,
+       V. Anisimov, F. W. Aquino, R. Atta-Fynn, J. Autschbach, N. P. Bauman,
+     J. C. Becca, D. E. Bernholdt, K. Bhaskaran-Nair, S. Bogatko, P. Borowski,
+         J. Boschen, J. Brabec, A. Bruner, E. Cauet, Y. Chen, G. N. Chuev,
+      C. J. Cramer, J. Daily, M. J. O. Deegan, T. H. Dunning Jr., M. Dupuis,
+   K. G. Dyall, G. I. Fann, S. A. Fischer, A. Fonari, H. Fruchtl, L. Gagliardi,
+      J. Garza, N. Gawande, S. Ghosh, K. Glaesemann, A. W. Gotz, J. Hammond,
+       V. Helms, E. D. Hermes, K. Hirao, S. Hirata, M. Jacquelin, L. Jensen,
+   B. G. Johnson, H. Jonsson, R. A. Kendall, M. Klemm, R. Kobayashi, V. Konkov,
+      S. Krishnamoorthy, M. Krishnan, Z. Lin, R. D. Lins, R. J. Littlefield,
+      A. J. Logsdail, K. Lopata, W. Ma, A. V. Marenich, J. Martin del Campo,
+   D. Mejia-Rodriguez, J. E. Moore, J. M. Mullin, T. Nakajima, D. R. Nascimento,
+    J. A. Nichols, P. J. Nichols, J. Nieplocha, A. Otero-de-la-Roza, B. Palmer,
+    A. Panyala, T. Pirojsirikul, B. Peng, R. Peverati, J. Pittner, L. Pollack,
+   R. M. Richard, P. Sadayappan, G. C. Schatz, W. A. Shelton, D. W. Silverstein,
+   D. M. A. Smith, T. A. Soares, D. Song, M. Swart, H. L. Taylor, G. S. Thomas,
+            V. Tipparaju, D. G. Truhlar, K. Tsemekhman, T. Van Voorhis,
+      A. Vazquez-Mayagoitia, P. Verma, O. Villa, A. Vishnu, K. D. Vogiatzis,
+        D. Wang, J. H. Weare, M. J. Williamson, T. L. Windus, K. Wolinski,
+        A. T. Wong, Q. Wu, C. Yang, Q. Yu, M. Zacharias, Z. Zhang, Y. Zhao,
+                                and R. J. Harrison
+                        "NWChem: Past, present, and future
+                         J. Chem. Phys. 152, 184102 (2020)
+                               doi:10.1063/5.0004997
+
+                                      AUTHORS
+                                      -------
+        E. Apra, E. J. Bylaska, N. Govind, K. Kowalski, D. Mejia-Rodriguez,
+        N. P. Bauman, A. Panyala, R. J. Harrison, M. Valiev, W. A. de Jong,
+       T. P. Straatsma, H. J. J. van Dam, D. Wang, T. L. Windus, J. Hammond,
+     J. Autschbach, R. de P. Soares, A. Kunitsa, K. Bhaskaran-Nair, J. Brabec,
+      K. Lopata, S. A. Fischer, S. Krishnamoorthy, M. Jacquelin, R. Goswami,
+       A. Woods, W. Ma, M. Klemm, O. Villa, Y. Chen, V. Anisimov, F. Aquino,
+     S. Hirata, M. T. Hackler, E. Hermes, L. Jensen, J. E. Moore, J. C. Becca,
+      V. Konjkov, T. Risthaus, M. Malagoli, A. Marenich, A. Otero-de-la-Roza,
+        J. Mullin, P. Nichols, R. Peverati, J. Pittner, Y. Zhao, P.-D. Fan,
+        A. Fonari, M. J. Williamson, J. R. Rehr, M. Dupuis, D. Silverstein,
+    D. M. A. Smith, J. Nieplocha, V. Tipparaju, M. Krishnan, B. E. Van Kuiken,
+        A. Vazquez-Mayagoitia, M. Swart, Q. Wu, T. Van Voorhis, A. A. Auer,
+     M. Nooijen, L. D. Crosby, E. Brown, G. Cisneros, G. I. Fann, H. Fruchtl,
+   J. Garza, K. Hirao, R. A. Kendall, J. A. Nichols, K. Tsemekhman, K. Wolinski,
+     J. Anchell, D. E. Bernholdt, P. Borowski, T. Clark, D. Clerc, H. Dachsel,
+   M. J. O. Deegan, K. Dyall, D. Elwood, E. Glendening, M. Gutowski, A. C. Hess,
+         J. Jaffe, B. G. Johnson, J. Ju, R. Kobayashi, R. Kutteh, Z. Lin,
+   R. Littlefield, X. Long, B. Meng, T. Nakajima, S. Niu, L. Pollack, M. Rosing,
+   K. Glaesemann, G. Sandrone, M. Stave, H. Taylor, G. Thomas, J. H. van Lenthe,
+                               A. T. Wong, Z. Zhang.
+
+ Total times  cpu:     6175.7s     wall:     6175.7s
