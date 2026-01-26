@@ -11,9 +11,8 @@ if [[ ! -f "${XYZ}" ]]; then
   exit 1
 fi
 
-base="$(basename "${XYZ}" .xyz)"
-stamp="$(date +%Y%m%d_%H%M%S)"
-job="${base}__${stamp}"
+base="$(basename "$(dirname "${XYZ}")")"
+job="${base}"
 workdir="${OUTROOT}/${job}"
 mkdir -p "${workdir}"
 
