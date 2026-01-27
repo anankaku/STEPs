@@ -14,3 +14,29 @@ End TASK Prologue Mon Jan 26 05:11:01 PM EST 2026
 ===================================================
 Running NWChem on STEPs_0003.nw
 Start time: Mon Jan 26 05:11:02 PM EST 2026
+===================================================
+Begin TASK Epilogue Mon Jan 26 07:05:17 PM EST 2026
+===================================================
+Job ID:           29997
+Username:         tuu61186
+Job Name:         nwchem
+Resources List:   nodes=1:ppn=1:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c01
+===================================================
+End TASK Epilogue Mon Jan 26 07:05:17 PM EST 2026
+===================================================
+===================================================
+Begin TASK Epilogue Mon Jan 26 07:11:17 PM EST 2026
+===================================================
+Job ID:           29998
+Username:         tuu61186
+Job Name:         nwchem
+Resources List:   nodes=1:ppn=1:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c01
+===================================================
+End TASK Epilogue Mon Jan 26 07:11:17 PM EST 2026
+===================================================
