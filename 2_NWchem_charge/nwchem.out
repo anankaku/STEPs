@@ -1,7 +1,7 @@
 ===================================================
-Begin TASK Prologue Mon Jan 26 05:11:01 PM EST 2026
+Begin TASK Prologue Tue Jan 27 04:48:49 AM EST 2026
 ===================================================
-Job ID:           29998
+Job ID:           30002
 Username:         tuu61186
 Group:            icms
 Job Name:         nwchem
@@ -10,14 +10,15 @@ Queue:            normal
 Account:          default
 Nodes:      c01
 ===================================================
-End TASK Prologue Mon Jan 26 05:11:01 PM EST 2026
+End TASK Prologue Tue Jan 27 04:48:49 AM EST 2026
 ===================================================
-Running NWChem on STEPs_0003.nw
-Start time: Mon Jan 26 05:11:02 PM EST 2026
+Running NWChem on STEPs_0002.nw
+Start time: Tue Jan 27 04:48:50 AM EST 2026
+End time: Tue Jan 27 07:20:09 AM EST 2026
 ===================================================
-Begin TASK Epilogue Mon Jan 26 07:05:17 PM EST 2026
+Begin TASK Epilogue Tue Jan 27 07:20:09 AM EST 2026
 ===================================================
-Job ID:           29997
+Job ID:           30001
 Username:         tuu61186
 Job Name:         nwchem
 Resources List:   nodes=1:ppn=1:ntasks=1
@@ -25,12 +26,13 @@ Queue:            normal
 Account:          default
 Nodes:      c01
 ===================================================
-End TASK Epilogue Mon Jan 26 07:05:17 PM EST 2026
+End TASK Epilogue Tue Jan 27 07:20:09 AM EST 2026
 ===================================================
+End time: Tue Jan 27 08:15:15 AM EST 2026
 ===================================================
-Begin TASK Epilogue Mon Jan 26 07:11:17 PM EST 2026
+Begin TASK Epilogue Tue Jan 27 08:15:15 AM EST 2026
 ===================================================
-Job ID:           29998
+Job ID:           30002
 Username:         tuu61186
 Job Name:         nwchem
 Resources List:   nodes=1:ppn=1:ntasks=1
@@ -38,5 +40,5 @@ Queue:            normal
 Account:          default
 Nodes:      c01
 ===================================================
-End TASK Epilogue Mon Jan 26 07:11:17 PM EST 2026
+End TASK Epilogue Tue Jan 27 08:15:15 AM EST 2026
 ===================================================

@@ -1,16 +1,12 @@
-# HPC / MD outputs
-*.log
-#*.out
-*.err
-
-*.b
-*.b^-1
+# NWChem binaries
+*.movecs*
+*.db*
+*.b*
+*.zmat*
+*.p*
 *.c
-*.db
-*.movecs
-*.p
-*.zmat
 
+# MD / trajectories
 *.dcd
 *.xtc
 *.trr
@@ -20,9 +16,13 @@
 *.gro
 *.cpt
 
+# Logs
+#*.log
+#*.err
+#*.out
+
+# Scratch dirs
 output/
 outputs/
-traj/
-trajectories/
 scratch/
 tmp/
