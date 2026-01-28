@@ -1,44 +1,58 @@
 ===================================================
-Begin TASK Prologue Tue Jan 27 04:48:49 AM EST 2026
+Begin TASK Prologue Tue Jan 27 10:07:03 PM EST 2026
 ===================================================
-Job ID:           30002
+Job ID:           30053
 Username:         tuu61186
 Group:            icms
 Job Name:         nwchem
 Resources List:   nodes=1:ppn=1:ntasks=1
 Queue:            normal
 Account:          default
-Nodes:      c01
+Nodes:      c08
 ===================================================
-End TASK Prologue Tue Jan 27 04:48:49 AM EST 2026
+End TASK Prologue Tue Jan 27 10:07:03 PM EST 2026
 ===================================================
-Running NWChem on STEPs_0002.nw
-Start time: Tue Jan 27 04:48:50 AM EST 2026
-End time: Tue Jan 27 07:20:09 AM EST 2026
+Running NWChem on STEPs_0006.nw
+Start time: Tue Jan 27 10:07:08 PM EST 2026
+End time: Wed Jan 28 01:16:15 AM EST 2026
 ===================================================
-Begin TASK Epilogue Tue Jan 27 07:20:09 AM EST 2026
+Begin TASK Epilogue Wed Jan 28 01:16:15 AM EST 2026
 ===================================================
-Job ID:           30001
+Job ID:           30051
 Username:         tuu61186
 Job Name:         nwchem
 Resources List:   nodes=1:ppn=1:ntasks=1
 Queue:            normal
 Account:          default
-Nodes:      c01
+Nodes:      c08
 ===================================================
-End TASK Epilogue Tue Jan 27 07:20:09 AM EST 2026
+End TASK Epilogue Wed Jan 28 01:16:15 AM EST 2026
 ===================================================
-End time: Tue Jan 27 08:15:15 AM EST 2026
+End time: Wed Jan 28 02:32:12 AM EST 2026
 ===================================================
-Begin TASK Epilogue Tue Jan 27 08:15:15 AM EST 2026
+Begin TASK Epilogue Wed Jan 28 02:32:12 AM EST 2026
 ===================================================
-Job ID:           30002
+Job ID:           30052
 Username:         tuu61186
 Job Name:         nwchem
 Resources List:   nodes=1:ppn=1:ntasks=1
 Queue:            normal
 Account:          default
-Nodes:      c01
+Nodes:      c08
 ===================================================
-End TASK Epilogue Tue Jan 27 08:15:15 AM EST 2026
+End TASK Epilogue Wed Jan 28 02:32:12 AM EST 2026
+===================================================
+End time: Wed Jan 28 03:34:29 AM EST 2026
+===================================================
+Begin TASK Epilogue Wed Jan 28 03:34:29 AM EST 2026
+===================================================
+Job ID:           30053
+Username:         tuu61186
+Job Name:         nwchem
+Resources List:   nodes=1:ppn=1:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c08
+===================================================
+End TASK Epilogue Wed Jan 28 03:34:29 AM EST 2026
 ===================================================
