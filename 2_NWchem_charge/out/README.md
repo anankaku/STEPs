@@ -9,5 +9,5 @@ grep -n "constrain 0" /path/to/your/*.nw
 use your output file to extract residue charges only into dat file.
 
 ```bash
-python extract.py /path/to/your.out --debug -o charge.dat
+python extract.py /path/to/your.out --debug -o /path/to/your/charge.dat
 ```
