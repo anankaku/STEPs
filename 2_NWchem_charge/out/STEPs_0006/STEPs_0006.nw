@@ -75,7 +75,17 @@ end
 task dft energy
 
 esp
-  # TODO: add constrain lines here
+  constrain 0 1 2 3 24 25 26
+  constrain 0 21 22 23 44 45 46 47 48 49
+  constrain equal 22 23
+  constrain equal 44 45 46 47 48 49
+  constrain equal 42 43
+  constrain equal 38 39
+  constrain equal 29 30
+  constrain equal 11 13
+  constrain equal 10 14
+  constrain equal 32 34
+  constrain equal 31 35
 end
 
 task esp
