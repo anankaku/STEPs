@@ -1,6 +1,6 @@
-## instruciton
+# instruciton
 
-find the constrain atoms which is your capping group.
+## 🔍find the constrain atoms which is your capping group.
 
 ```bash
 grep -n "constrain 0" /path/to/your/*.nw
@@ -10,7 +10,7 @@ command line would show:
 constrain 0 #a #b #c ... #n
 ```
 ---
-use your output file to extract residue charges only into dat file.
+## 📍use your output file to extract residue charges only into dat file.
 
 ```bash
 python extract.py /path/to/your.out --show-removed -o /your/charge.dat
@@ -55,3 +55,20 @@ python extract.py /path/to/your.out --show-kept -o /your/charge.dat
 ```
 
 print the kept atoms
+
+---
+## ✂️trim your xyz file into uncapped
+```bash
+python trim_xyz.py
+```
+
+* Input XYZ: `/path/to/your/xtbopt.xyz`
+* Indices to remove: `1 2 3 18 19 20 15-17 27-32`
+* Output: `/path/to/create/uncapped.xyz`
+---
+## ↔️convert xyz file into pdb file
+```bash
+obabel uncapped.xyz -O uncapped.pdb
+```
+
+
