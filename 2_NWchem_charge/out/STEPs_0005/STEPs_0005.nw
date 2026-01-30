@@ -79,6 +79,8 @@ esp
   constrain equal 39 40
   constrain equal 26 27
   constrain equal 28 29
+  constrain equal 35 36 37
+  constrain equal 32 33 34
 end
 
 task esp

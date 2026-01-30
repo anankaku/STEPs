@@ -3,7 +3,7 @@
 *.db*
 *.b*
 *.zmat*
-*.p*
+*.p
 *.c
 
 # MD / trajectories
