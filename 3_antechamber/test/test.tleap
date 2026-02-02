@@ -1,0 +1,6 @@
+source leaprc.gaff2
+loadamberparams s01.prepi
+R = loadmol2 s01.mol2
+setBox R vdw 10.0
+saveAmberParm R s01.top s01.crd
+quit
