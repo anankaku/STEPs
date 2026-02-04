@@ -66,9 +66,10 @@ python trim_xyz.py
 * Indices to remove: `1 2 3 18 19 20 15-17 27-32`
 * Output: `/path/to/create/uncapped.xyz`
 ---
-## ↔️convert xyz file into pdb file
+## ↔️convert xyz file into mol2 file
 ```bash
-obabel uncapped.xyz -O uncapped.pdb
+obabel /path/to/your.xyz -O capped.mol2
 ```
+
 
 
