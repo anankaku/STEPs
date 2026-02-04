@@ -68,8 +68,9 @@ python trim_xyz.py
 ---
 ## ↔️convert xyz file into mol2 file
 ```bash
-obabel /path/to/your.xyz -O capped.mol2
+obabel /path/to/your.xyz -O geom.mol2
 ```
+
 
 
 
