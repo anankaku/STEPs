@@ -279,8 +279,8 @@ The script generates the following files in the specified output directory:
 Example:
 
 ```text
-../path/to/your.top
-../path/to/your.crd
+../path/to/create/your.top
+../path/to/create/your.crd
 ```
 
 ---
