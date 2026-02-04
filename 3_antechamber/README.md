@@ -196,3 +196,113 @@ This MOL2-centered workflow prioritizes **force-field correctness over geometric
 By explicitly defining atom connectivity and chemical context prior to topology generation, the pipeline ensures robust, reproducible AMBER force field parameters suitable for systematic mdgx-based fitting.
 
 ---
+## Running `run_tleap.sh` (Interactive Mode)
+
+### 1. Run the script
+
+From the directory where the script is located:
+
+```bash
+bash run_tleap.sh
+```
+
+---
+
+### 2. Interactive prompts
+
+After execution, the script will prompt you for the required inputs:
+
+```text
+prepi path (relative OK):
+```
+
+Enter the path to the `.prepi` file.
+Relative paths (relative to your current working directory) are supported.
+
+Example:
+
+```text
+../path/to/your.prepi
+```
+
+---
+
+```text
+mol2  path (relative OK):
+```
+
+Enter the path to the `.mol2` file.
+
+Example:
+
+```text
+../path/to/your.mol2
+```
+
+---
+
+```text
+output dir (relative OK):
+```
+
+Enter the directory where output files will be written.
+The directory will be created automatically if it does not exist.
+
+Example:
+
+```text
+../path/you/want
+```
+
+---
+
+```text
+vdw padding (default 10.0):
+```
+
+Enter the van der Waals padding (in Å) used by `setBox`.
+
+* Press **Enter** to accept the default value (`10.0`)
+* Or enter a custom value (e.g. `12.0`)
+
+---
+
+### 3. Output files
+
+The script generates the following files in the specified output directory:
+
+```text
+<basename>.top
+<basename>.crd
+```
+
+Example:
+
+```text
+../path/to/your.top
+../path/to/your.crd
+```
+
+---
+
+### 4. Notes on default behavior
+
+* All input paths (relative or absolute) are internally converted to absolute paths
+* `leaprc.gaff2` is sourced automatically
+* No `tleap` input files are copied into data directories
+
+This design keeps the workflow clean and reproducible.
+
+---
+
+### 5. First-time setup (only needed once)
+
+If the script is not executable yet, enable execution permission:
+
+```bash
+chmod +x run_tleap.sh
+```
+
+After this, the script can be run normally with `./run_tleap.sh` or `bash run_tleap.sh`.
+
+---
