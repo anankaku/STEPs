@@ -26,7 +26,10 @@ output/
 outputs/
 scratch/
 tmp/
+test/
 
 ANTECHAMBER*.*
 NEWPDB*.PDB
 *.INF
+
+readme_2.md
