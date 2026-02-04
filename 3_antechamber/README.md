@@ -104,7 +104,7 @@ The constrained ESP charges are written to a plain-text file for use with `antec
 The optimized geometry (`s01.xyz`) from NWChem is converted to **MOL2** format to establish explicit bond connectivity.
 
 ```bash
-obabel s01.xyz -O geom.mol2
+obabel /path/to/your.xyz -O s0X.mol2
 ```
 
 This step provides:
@@ -119,18 +119,18 @@ This step provides:
 
 Two files are generated:
 
-* `s01.mol2`: fully typed, RESP-charged reference structure
+* `s0X.mol2`: fully typed, RESP-charged reference structure
 ```bash
 # Assign RESP charges
-antechamber -i geom.mol2 -fi mol2 -c rc -cf capped_charge.dat -o s01.mol2  -fo mol2  -s 2
+antechamber -i geom.mol2 -fi mol2 -c rc -cf capped_charge.dat -o s0X.mol2  -fo mol2  -s 2
 ```
-* `s01.prepi`: AMBER residue definition used by `tleap`
+* `s0X.prepi`: AMBER residue definition used by `tleap`
 ```bash
 # Generate GAFF2 atom types
-antechamber -i geom.mol2 -fi mol2 -c rc -cf capped_charge.dat -o s01.prepi -fo prepi
+antechamber -i geom.mol2 -fi mol2 -c rc -cf capped_charge.dat -o s0X.prepi -fo prepi
 ```
 
-The resulting `s01.mol2` is used to:
+The resulting `s0X.mol2` is used to:
 
 * Verify atom order
 * Inspect GAFF2 atom typing
@@ -145,11 +145,11 @@ Create the script `build.tleap` with the following content:
 ```bash
 source leaprc.gaff2
 
-loadAmberPrep s01.prepi
-x = loadmol2 "s01.mol2"
+loadAmberPrep s0X.prepi
+x = loadmol2 "s0X.mol2"
 
 setBox x vdw 10.0
-saveAmberParm x s01.top s01.crd
+saveAmberParm x s0X.top s0X.crd
 quit
 ```
 
@@ -165,17 +165,17 @@ tleap -f build.tleap
 
 | File         | Description                                   |
 | ------------ | --------------------------------------------- |
-| `s01.mol2`   | GAFF2-typed, RESP-charged reference structure |
-| `s01.prepi`  | AMBER residue definition                      |
-| `s01.top`    | AMBER topology file                           |
-| `s01.crd`    | Coordinate file                               |
+| `s0X.mol2`   | GAFF2-typed, RESP-charged reference structure |
+| `s0X.prepi`  | AMBER residue definition                      |
+| `s0X.top`    | AMBER topology file                           |
+| `s0X.crd`    | Coordinate file                               |
 | Periodic box | 10.0 Å VDW padding                            |
 
 ---
 
 ## Notes on mdgx / STEPs Compatibility
 
-* `s01.top` and `s01.crd` are **direct inputs to mdgx**
+* `s0X.top` and `s0X.crd` are **direct inputs to mdgx**
 * Atom ordering is preserved across:
 
   * RESP fitting
