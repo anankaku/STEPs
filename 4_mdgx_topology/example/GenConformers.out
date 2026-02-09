@@ -1,0 +1,116 @@
+<++>-----------------------------------------------------------------------<++>
+<++> mdgx: A molecular dynamics engine in the AMBER suite of programs      <++>
+<++>                                                                       <++>
+<++> Written by David S. Cerutti, Case Group (2009 - 2020)                 <++>
+<++>-----------------------------------------------------------------------<++>
+
+Run on Mon Feb  9 14:40:07 2026
+<++>-----------------------------------------------------------------------<++>
+
+INPUT LINE TEXT:
+
+mdgx -i gen_coor.mdgx 
+
+
+INPUT FILE TEXT:
+
+&files
+  -p    ./R20.top
+  -c    ./R20.crd
+  -o    GenConformers.out
+&end
+
+&configs
+  GridSample    :1@C2 :1@N1 :1@C10  :1@C11   { -180.0 180.0 }  Krst 64.0
+  GridSample    :1@N1 :1@C10 :1@C11 :1@N2    { -180.0 180.0 }  Krst 64.0
+  GridSample    :1@O1 :1@C2 :1@N1  :1@C3   { -180.0 180.0 }  Krst 64.0
+  
+  GridSample    :1@N1 :1@C3 :1@C4  :1@C5   { -180.0 180.0 }  Krst 64.0
+  GridSample    :1@C2 :1@N1 :1@C3  :1@C4   { -180.0 180.0 }  Krst 64.0
+
+  RandomSample  :1@C2 :1@N1 :1@C3         {  105.0 135.0 }   Krst 256.0
+  RandomSample  :1@C10 :1@N1 :1@C3         {  105.0 135.0 }   Krst 256.0
+
+  combine 1 2 3 4 5  
+  count 10
+  verbose 1
+
+  % Controls on the quantum mechanical operations
+  qmlev    'B3LYP',
+  basis    '6-31G**',
+
+  % Output controls: TAKE NOTE, this will generate a lot of files so
+  % do this in a clean directory that you won't ls very often.
+  outbase  'Conf', 'Conf'
+  write    'pdb',  'orca'
+  outsuff  'pdb',  'orca'
+&end
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+(1.) Energies of the initial and final states.  Units are kcal/mol.  A number 
+     of statistics could be of interest here: this table tries to anticipate 
+     them.
+
+ Statistic                Mean Value    Std. Dev.   Min. Value   Max. Value  
+                           (kcal/mol)   (kcal/mol)   (kcal/mol)   (kcal/mol) 
+ ------------------------ ------------ ------------ ------------ ------------
+ Initial E(Model) (a)          -7.1471       0.0000      -7.1471      -7.1471
+ Initial E(Restraint) (b)     736.7040     308.8770     234.6985    1244.9916
+ Final E(Model) (c)             9.4577      20.6473      -6.2679      49.3677
+ Final E(Restraint) (d)         9.9798      17.3104       0.7438      46.3981
+ Delta E(Model) (e)            16.6048      20.6473       0.8792      56.5148
+ Delta E(Restraint) (f)      -726.7242     294.8755   -1206.3658    -233.1966
+
+  (a) The energies of the initial models, without the restraint energy (this 
+      is an indicator of how strained the configurations were before mdgx 
+      began to manipulate them).
+  (b) When restraints were first applied to the initial models, these were the 
+      restraint energies.
+  (c) The energies of the final models, again excluding restraint energy. 
+      This is an indicator of how strained the molecular configurations became 
+      after manipulation.
+  (d) Restraint energy needed to get the final configurations into place.
+  (e) This is an indicator of the change in molecular mechanics energy. 
+      E(model) will typically rise, indicating that structures became 
+      distorted in response to pressure from external restraints.
+  (f) The change in restraint energy.  E(restraint) will typically fall as 
+      restraints force the structures into new configurations.
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+(2.) Convergence statistics for the run.  This block of information describes 
+     the energy minimization of ALL configurations, regardless of whether they 
+     were printed.  The next section presents counts of configurations passing 
+     the basic sanity checks.
+
+ - Average steps to convergence:     519 +/-  349
+ - Total converged configurations:     3
+ - Unconverged configurations:         7
+
+ - Average of the maximal residual force
+   on NON-converged configurations:        7.476068e-02 kcal/mol-A
+ - Average residual forces on frequently strained atoms:
+     Atom   15, N1   ( 4 configs):         1.258629e-01 kcal/mol-A
+     Atom   16, C2   ( 1 configs):         1.089966e-04 kcal/mol-A
+     Atom   17, C1   ( 1 configs):         7.094830e-03 kcal/mol-A
+     Atom   30, C7   ( 1 configs):         1.266930e-02 kcal/mol-A
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+(3.) Basic sanity checks.  If a configuration fails these tests, it was not 
+     printed out for further consideration but the reasons it failed will be 
+     summarized here.  The tests are that, first, no bond of a configuration 
+     may be strained more than 10.00 kcal/mol.  Furthermore, no angle may be 
+     strained more than 10.00 kcal/mol.  Finally, the maximum tolerated 
+     restraint energy (summed over all restraints) is 200.00 kcal/mol. If any 
+     of these tests seem too stringent or not tight enough, the thresholds may 
+     be changed in the &configs namelist.
+
+ - Configurations passing all sanity checks:         10
+ - Configurations failing bond sanity check:          0
+ - Configurations failing angle sanity check:         0
+ - Configurations failing restraint sanity check:     0
+
+<++>-----------------------------------------------------------------------<++>

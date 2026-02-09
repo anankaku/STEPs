@@ -1,0 +1,88 @@
+HEADER  Printed by mdgx
+REMARK   4
+REMARK   4 Topology used to create this configuration:
+REMARK   4   ./R20.top
+REMARK   4
+REMARK   4 Restraints used to create this configuration:
+REMARK   4 &rst
+REMARK   4  iat=16,15,12,10,
+REMARK   4  r1=-118.6479, r2=-90.0000, r3=-90.0000, r4=-61.3521,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=15,12,10,5,
+REMARK   4  r1=61.3521, r2=90.0000, r3=90.0000, r4=118.6479,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=21,16,15,22,
+REMARK   4  r1=61.3521, r2=90.0000, r3=90.0000, r4=118.6479,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=15,22,25,26,
+REMARK   4  r1=-82.6479, r2=-54.0000, r3=-54.0000, r4=-25.3521,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=16,15,22,25,
+REMARK   4  r1=-82.6479, r2=-54.0000, r3=-54.0000, r4=-25.3521,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=16,15,22,
+REMARK   4  r1=103.4547, r2=132.1026, r3=132.1026, r4=160.7505,
+REMARK   4  rk2=256.0000, rk3=256.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=12,15,22,
+REMARK   4  r1=77.1643, r2=105.8122, r3=105.8122, r4=134.4600,
+REMARK   4  rk2=256.0000, rk3=256.0000,
+REMARK   4 &end
+REMARK   4
+REMARK   4 Molecular mechanics energy decomposition (kcal/mol):
+REMARK   4   Bond                0.8118
+REMARK   4   Angle               4.5016
+REMARK   4   Dihedral           23.1331 (sum of proper and improper terms)
+REMARK   4   van-der Waals       2.5134 (includes 1-4 interactions)
+REMARK   4   Electrostatic     -33.9081 (includes 1-4 interactions)
+REMARK   4   Restraints          1.5019
+REMARK   4   Total energy       -1.4463 (includes restraint energy)
+REMARK   4
+CRYST1  200.000  200.000  200.000  90.00  90.00  90.00 P 1 1 1
+ATOM      1 C12  UNL A   0      18.218  13.659  13.237
+ATOM      2 H13  UNL A   0      18.672  14.606  13.555
+ATOM      3 H14  UNL A   0      17.421  13.861  12.510
+ATOM      4 H15  UNL A   0      18.991  13.044  12.759
+ATOM      5 N2   UNL A   0      17.654  12.959  14.406
+ATOM      6 C13  UNL A   0      18.012  11.535  14.530
+ATOM      7 H16  UNL A   0      17.184  10.981  14.989
+ATOM      8 H17  UNL A   0      18.907  11.435  15.158
+ATOM      9 H18  UNL A   0      18.213  11.106  13.540
+ATOM     10 C11  UNL A   0      17.011  13.621  15.453
+ATOM     11 O2   UNL A   0      16.781  13.054  16.508
+ATOM     12 C10  UNL A   0      16.212  14.889  15.074
+ATOM     13 H11  UNL A   0      16.259  15.580  15.925
+ATOM     14 H12  UNL A   0      16.684  15.405  14.230
+ATOM     15 N1   UNL A   0      14.810  14.526  14.722
+ATOM     16 C2   UNL A   0      14.567  14.231  13.401
+ATOM     17 C1   UNL A   0      14.139  12.800  13.145
+ATOM     18 H1   UNL A   0      14.126  12.605  12.066
+ATOM     19 H2   UNL A   0      13.136  12.638  13.554
+ATOM     20 H3   UNL A   0      14.837  12.107  13.629
+ATOM     21 O1   UNL A   0      14.847  14.995  12.500
+ATOM     22 C3   UNL A   0      13.908  15.153  15.713
+ATOM     23 H4   UNL A   0      14.411  15.286  16.680
+ATOM     24 H5   UNL A   0      13.087  14.449  15.895
+ATOM     25 C4   UNL A   0      13.310  16.488  15.259
+ATOM     26 C5   UNL A   0      14.129  17.550  14.826
+ATOM     27 H6   UNL A   0      15.207  17.439  14.800
+ATOM     28 C6   UNL A   0      13.559  18.764  14.412
+ATOM     29 H7   UNL A   0      14.196  19.576  14.072
+ATOM     30 C7   UNL A   0      12.166  18.929  14.431
+ATOM     31 H8   UNL A   0      11.725  19.868  14.109
+ATOM     32 C8   UNL A   0      11.342  17.879  14.863
+ATOM     33 H9   UNL A   0      10.263  18.006  14.876
+ATOM     34 C9   UNL A   0      11.912  16.664  15.275
+ATOM     35 H10  UNL A   0      11.264  15.857  15.606
+END
