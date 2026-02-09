@@ -1,6 +1,6 @@
 # mdgx Angle/Dihedral 2D Map Generator (RDKit + PIL)
 
-This script reads an **mdgx input file** (e.g., `genconf.in` / `generate.in`), extracts each `GridSample` and `RandomSample` line, and generates **one 2D structure PNG per config line**.
+This script reads an **mdgx input file** (e.g., `genconf.in` / `gen_coor.mdgx`), extracts each `GridSample` and `RandomSample` line, and generates **one 2D structure PNG per config line**.
 
 Each PNG shows:
 
@@ -43,7 +43,7 @@ python -c "from rdkit import Chem; from PIL import Image; print('OK')"
 
 You need **two** inputs:
 
-1. **mdgx input file** (e.g., `genconf.in` or `generate.in`)
+1. **mdgx input file** (e.g., `genconf.in` or `gen_coor.mdgx`)
 
    * Must contain lines like:
 
@@ -96,7 +96,7 @@ angle_maps/
 
 ## Running mdgx to generate conformers
 
-After preparing `generate.in`, conformer generation is performed using **mdgx**, which is part of **AmberTools**.
+After preparing `gen_coor.mdgx`, conformer generation is performed using **mdgx**, which is part of **AmberTools**.
 
 ### Prerequisites
 
@@ -111,7 +111,7 @@ Typical directory layout:
 
 ```text
 R20_example/
-  generate.in
+  gen_coor.mdgx
   R20.top
   R20.crd
   R20.mol2              # reference structure (for visualization only)
@@ -120,9 +120,9 @@ R20_example/
 
 ---
 
-### Minimal `generate.in` structure
+### Minimal `gen_coor.mdgx` structure
 
-A typical `generate.in` used for conformer generation looks like:
+A typical `gen_coor.mdgx` used for conformer generation looks like:
 
 ```text
 &files
@@ -155,7 +155,7 @@ The Python visualization script reads **only this block**.
 
 ### Running mdgx
 
-From the directory containing `generate.in`:
+From the directory containing `gen_coor.mdgx`:
 
 ```bash
 mdgx -i gen_coor.mdgx
@@ -194,7 +194,7 @@ GenConformers.out
 
 ⚠️ **Important**
 The Python script **does not read these conformer files**.
-It uses only the *reference structure* and *generate.in* to visualize the sampling design.
+It uses only the *reference structure* and *gen_coor.mdgx* to visualize the sampling design.
 
 ---
 
