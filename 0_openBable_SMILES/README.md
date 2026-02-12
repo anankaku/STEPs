@@ -144,10 +144,10 @@ This script serves as the starting point for the STEPs automated parameterizatio
 
 ## Features
 
-1.  **3D Coordinate Generation (`.xyz`):** Uses OpenBabel to convert 1D SMILES strings into 3D structures required for **xTB/ORCA** optimization [Source 4, 5].
-2.  **Visual Inspection (`.png`):** Uses RDKit to generate 2D structural diagrams labeled with atom indices [Source 6].
-3.  **Connectivity Data (`.sdf`):** Preserves bond information and atom ordering [Source 4].
-4.  **Atom Mapping (`.csv`):** Creates a mapping file linking atom indices to element types [Source 8].
+1.  **3D Coordinate Generation (`.xyz`):** Uses OpenBabel to convert 1D SMILES strings into 3D structures required for **xTB/ORCA** optimization.
+2.  **Visual Inspection (`.png`):** Uses RDKit to generate 2D structural diagrams labeled with atom indices.
+3.  **Connectivity Data (`.sdf`):** Preserves bond information and atom ordering.
+4.  **Atom Mapping (`.csv`):** Creates a mapping file linking atom indices to element types.
 
 ## Prerequisites
 
@@ -156,7 +156,7 @@ This script requires **Python 3**, **OpenBabel**, and **RDKit**. We recommend in
 ```bash
 conda install -c conda-forge openbabel rdkit pandas
 ```
-*Note: The script explicitly checks for the `obabel` executable in your system PATH [Source 2].*
+*Note: The script explicitly checks for the `obabel` executable in your system PATH.*
 
 ## Quick Start
 
@@ -167,8 +167,8 @@ python smiles2xyz.py --csv data.csv --gen3d --index-base 1
 ```
 
 ### Why these flags?
-*   `--gen3d`: **Crucial.** Tells OpenBabel to generate actual 3D coordinates. Without this, your molecule will be flat, which is bad for xTB optimization [Source 4].
-*   `--index-base 1`: **Crucial.** Sets atom numbering to start at 1 (instead of the default 0). This ensures the atom IDs in the PNG images match the IDs used in Amber `tleap`, `mdgx`, and Gaussian inputs [Source 7, 9].
+*   `--gen3d`: **Crucial.** Tells OpenBabel to generate actual 3D coordinates. Without this, your molecule will be flat, which is bad for xTB optimization.
+*   `--index-base 1`: **Crucial.** Sets atom numbering to start at 1 (instead of the default 0). This ensures the atom IDs in the PNG images match the IDs used in Amber `tleap`, `mdgx`, and Gaussian inputs.
 
 ## Usage & Arguments
 
@@ -179,7 +179,7 @@ python smiles2xyz.py [arguments]
 | Argument | Default | Description |
 | :--- | :--- | :--- |
 | `--csv` | *(Required)* | Path to the input CSV file containing SMILES. |
-| `--smiles-col` | `Capped_SMILES` | The column name in the CSV holding the SMILES string [Source 11]. |
+| `--smiles-col` | `Capped_SMILES` | The column name in the CSV holding the SMILES string. |
 | `--gen3d` | `False` | **Recommended.** If set, generates 3D coordinates using OpenBabel. |
 | `--index-base` | `0` | Starting number for atom indices (`0` or `1`). **Set to `1` for Amber/mdgx.** |
 | `--outdir` | `out` | Directory where output files will be saved. |
@@ -188,7 +188,7 @@ python smiles2xyz.py [arguments]
 
 ## Output Structure
 
-The script creates an output directory (default: `out/`) with the following subfolders [Source 16]:
+The script creates an output directory (default: `out/`) with the following subfolders:
 
 *   **`out/xyz/`**: Contains `.xyz` files.
     *   *Use:* Input for **xTB** or **ORCA** geometry optimization.
@@ -202,10 +202,10 @@ The script creates an output directory (default: `out/`) with the following subf
 ## FAQ
 
 **Q: Why do I need to set `--index-base 1`?**
-A: Python and RDKit use 0-based indexing by default [Source 11]. However, molecular dynamics software like Amber (`mdgx`) and Gaussian use 1-based indexing. Setting this flag ensures the numbers you see on the generated PNG images exactly match the numbers you need to write in your MD input files.
+A: Python and RDKit use 0-based indexing by default. However, molecular dynamics software like Amber (`mdgx`) and Gaussian use 1-based indexing. Setting this flag ensures the numbers you see on the generated PNG images exactly match the numbers you need to write in your MD input files.
 
 **Q: My input CSV column isn't named "Capped_SMILES".**
 A: You can specify your column name using the argument: `--smiles-col "YourColumnName"`.
 
 **Q: I get a "Cannot find 'obabel'" error.**
-A: The script cannot find the OpenBabel executable [Source 2]. Ensure you have installed OpenBabel and activated your conda environment.
+A: The script cannot find the OpenBabel executable. Ensure you have installed OpenBabel and activated your conda environment.
