@@ -244,7 +244,7 @@ def main() -> None:
     ap.add_argument("--prefix", default="STEPs", help="Output file name prefix")
     ap.add_argument("--gen3d", action="store_true", help="Use OpenBabel --gen3d for 3D generation")
     ap.add_argument("--png-size", type=int, default=450, help="PNG image size (pixels)")
-    ap.add_argument("--index-base", type=int, choices=[0, 1], default=0, help="Atom index base")
+    ap.add_argument("--index-base", type=int, choices=[0, 1], default=1, help="Atom index base")
 
     args = ap.parse_args()
 
