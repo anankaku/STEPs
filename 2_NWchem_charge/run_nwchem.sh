@@ -21,10 +21,8 @@ if [ ! -f "${NWFILE}" ]; then
   exit 1
 fi
 
-# ===== 環境（乾淨版）=====
 module --force purge
 
-# conda 初始化時暫時關掉 -u，避免 /etc/bashrc 類問題
 set +u
 source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate nwchem_env
