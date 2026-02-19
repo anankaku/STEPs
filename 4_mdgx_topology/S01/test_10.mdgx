@@ -24,7 +24,7 @@
 
   % Output controls: TAKE NOTE, this will generate a lot of files so
   % do this in a clean directory that you won't ls very often.
-  write   'gaussian'
-  outbase 'Conf'
-  outsuff 'com'
+  write   'pdb', 'gaussian'
+  outbase 'Conf', 'Conf'
+  outsuff 'pdb',  'com'
 &end

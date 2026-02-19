@@ -4,7 +4,7 @@
 <++> Written by David S. Cerutti, Case Group (2009 - 2020)                 <++>
 <++>-----------------------------------------------------------------------<++>
 
-Run on Thu Feb 19 01:20:46 2026
+Run on Thu Feb 19 03:22:57 2026
 <++>-----------------------------------------------------------------------<++>
 
 INPUT LINE TEXT:
@@ -40,9 +40,9 @@ INPUT FILE TEXT:
 
   % Output controls: TAKE NOTE, this will generate a lot of files so
   % do this in a clean directory that you won't ls very often.
-  write   'gaussian'
-  outbase 'Conf'
-  outsuff 'com'
+  write   'pdb', 'gaussian'
+  outbase 'Conf', 'Conf'
+  outsuff 'pdb',  'com'
 &end
 <++>-----------------------------------------------------------------------<++>
 
