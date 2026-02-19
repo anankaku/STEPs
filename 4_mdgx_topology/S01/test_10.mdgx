@@ -1,21 +1,20 @@
 &files
-  -p    /home/tuu61186/STEPs/3_antechamber/S01/s01.top
-  -c    /home/tuu61186/STEPs/3_antechamber/S01/s01.crd
+  -p    ../../3_antechamber/S01/s01.top
+  -c    ../../3_antechamber/S01/s01.crd
   -o    GenConformers.out
 &end
 
 &configs
-  GridSample    :1@C2 :1@N1 :1@C10  :1@C11   { -180.0 180.0 }  Krst 64.0
-  GridSample    :1@N1 :1@C10 :1@C11 :1@N2    { -180.0 180.0 }  Krst 64.0
-  GridSample    :1@O1 :1@C2 :1@N1  :1@C3   { -180.0 180.0 }  Krst 64.0
+  GridSample:1@C1 :1@N :1@C8 :1@C9 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@N :1@C8 :1@C9 :1@N1 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@O :1@C1 :1@N :1@C8 { -180.0 180.0 }  Krst 64.0
   
-  GridSample    :1@N1 :1@C3 :1@C4  :1@C5   { -180.0 180.0 }  Krst 64.0
-  GridSample    :1@C2 :1@N1 :1@C3  :1@C4   { -180.0 180.0 }  Krst 64.0
+  GridSample:1@C1 :1@N :1@C2 :1@C3 { -180.0 180.0 }  Krst 64.0
 
-  RandomSample  :1@C2 :1@N1 :1@C3         {  105.0 135.0 }   Krst 256.0
-  RandomSample  :1@C10 :1@N1 :1@C3         {  105.0 135.0 }   Krst 256.0
+  RandomSample:1@C2 :1@N :1@C1 {  105.0 135.0 }   Krst 256.0
+  RandomSample:1@C2 :1@N :1@C8 {  105.0 135.0 }   Krst 256.0
 
-  combine 1 2 3 4 5  
+  combine 1 2 3 4  
   count 10
   verbose 1
 
@@ -25,7 +24,7 @@
 
   % Output controls: TAKE NOTE, this will generate a lot of files so
   % do this in a clean directory that you won't ls very often.
-  outbase  'Conf', 'Conf'
-  write    'pdb',  'gaussian'
-  outsuff  'pdb',  'gjf'
+  write   'gaussian'
+  outbase 'Conf'
+  outsuff 'com'
 &end

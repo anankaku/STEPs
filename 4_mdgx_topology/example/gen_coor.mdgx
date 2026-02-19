@@ -5,12 +5,12 @@
 &end
 
 &configs
-  GridSample    :1@C2 :1@N1 :1@C10  :1@C11   { -180.0 180.0 }  Krst 64.0
-  GridSample    :1@N1 :1@C10 :1@C11 :1@N2    { -180.0 180.0 }  Krst 64.0
-  GridSample    :1@O1 :1@C2 :1@N1  :1@C3   { -180.0 180.0 }  Krst 64.0
+  GridSample:1@C2:1@N1:1@C10:1@C11 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@N1:1@C10:1@C11:1@N2 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@O1:1@C2:1@N1:1@C3 { -180.0 180.0 }  Krst 64.0
   
-  GridSample    :1@N1 :1@C3 :1@C4  :1@C5   { -180.0 180.0 }  Krst 64.0
-  GridSample    :1@C2 :1@N1 :1@C3  :1@C4   { -180.0 180.0 }  Krst 64.0
+  GridSample :1@N1 :1@C3 :1@C4 :1@C5   { -180.0 180.0 }  Krst 64.0
+  GridSample :1@C2 :1@N1 :1@C3 :1@C4   { -180.0 180.0 }  Krst 64.0
 
   RandomSample  :1@C2 :1@N1 :1@C3         {  105.0 135.0 }   Krst 256.0
   RandomSample  :1@C10 :1@N1 :1@C3         {  105.0 135.0 }   Krst 256.0
