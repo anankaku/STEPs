@@ -69,6 +69,12 @@ A flat-bottom harmonic restraint is applied, with stiffness controlled by `Krst`
 Used only with `GridSample` operations to generate multidimensional grid sampling.
 Not applied to `RandomSample`.
 
+### 1.3.2 fixed the order
+```bash
+ls Conf*.pdb | sort -V > filelist_pdb.txt
+```
+- create a `.txt` file to list the correct order
+
 ---
 ## 2. usage of `gaussian.py`
 ```bash
@@ -91,4 +97,51 @@ here we use Gaussian 09 in Stella
 sbatch single_point.sh
 ```
 - make sure the number of array, `#SBATCH --array=0-9`, is same as your input files
-- `#SBATCH --cpus-per-task=8` and `SBATCH --mem=16G` should align your input setup
+- `#SBATCH --cpus-per-task=8` and `SBATCH --mem=16G` should align your input setup 
+```bash
+    #!/bin/bash
+    #SBATCH --job-name=g09_array
+    #SBATCH --output=%x.%A_%a.out
+    #SBATCH --error=%x.%A_%a.err
+    #SBATCH --array=0-9
+    #SBATCH --nodes=1
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=8
+    #SBATCH --mem=16G
+    #SBATCH --time=08:00:00
+    #SBATCH --partition=normal
+```
+
+## 4. create `.cdf` file
+to make all conformers into one file via `cpptraj`
+```bash
+(
+echo "parm ../../3_antechamber/S01/s01.top"
+while read f; do
+  echo "trajin $f"
+done < filelist_pdb.txt
+echo "trajout coords.cdf netcdf"
+echo "run"
+echo "quit"
+) > make_cdf.in
+```
+- paste directly on Terminal command
+- checking the content
+  - `head make_cdf.in`
+- example
+```bash
+parm ../../3_antechamber/S01/s01.top
+trajin Conf1.pdb
+trajin Conf2.pdb
+trajin Conf3.pdb
+trajin Conf4.pdb
+trajin Conf5.pdb
+trajin Conf6.pdb
+trajin Conf7.pdb
+trajin Conf8.pdb
+trajin Conf9.pdb
+trajin Conf10.pdb
+trajout coords.cdf netcdf
+run
+quit
+```
