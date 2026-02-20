@@ -104,7 +104,7 @@ The constrained ESP charges are written to a plain-text file for use with `antec
 The optimized geometry (`s01.xyz`) from NWChem is converted to **MOL2** format to establish explicit bond connectivity.
 
 ```bash
-obabel /path/to/your.xyz -O s0X.mol2
+obabel /path/to/your.xyz -O geom.mol2
 ```
 
 This step provides:
