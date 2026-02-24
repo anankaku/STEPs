@@ -128,3 +128,34 @@ trajout coords.cdf netcdf
 run
 quit
 ```
+## 5. create `energy.dat` file
+to make energies into one file
+- `python extract_energy.py your/energy/log/folder`
+- example print out
+```bash
+[OK] Conf1.log: -826.123654599000 Hartree
+[OK] Conf2.log: -826.123654599000 Hartree
+[OK] Conf3.log: -826.123654599000 Hartree
+[OK] Conf4.log: -826.123654598000 Hartree
+[OK] Conf5.log: -826.123654599000 Hartree
+[OK] Conf6.log: -826.123654599000 Hartree
+[OK] Conf7.log: -826.123654598000 Hartree
+[OK] Conf8.log: -826.123654599000 Hartree
+[OK] Conf9.log: -826.123654599000 Hartree
+[OK] Conf10.log: -826.123654599000 Hartree
+
+Wrote 10 energies -> /home/tuu61186/STEPs/5_mdgx_training/S01/energy.dat
+```
+- example output
+```bash
+-826.123654599000
+-826.123654599000
+-826.123654599000
+-826.123654598000
+-826.123654599000
+-826.123654599000
+-826.123654598000
+-826.123654599000
+-826.123654599000
+-826.123654599000
+```
