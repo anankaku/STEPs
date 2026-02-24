@@ -69,11 +69,7 @@ A flat-bottom harmonic restraint is applied, with stiffness controlled by `Krst`
 Used only with `GridSample` operations to generate multidimensional grid sampling.
 Not applied to `RandomSample`.
 
-### 1.3.2 fixed the order
-```bash
-ls Conf*.pdb | sort -V > filelist_pdb.txt
-```
-- create a `.txt` file to list the correct order
+
 
 ---
 ## 2. usage of `gaussian.py`
@@ -114,20 +110,7 @@ sbatch single_point.sh
 
 ## 4. create `.cdf` file
 to make all conformers into one file via `cpptraj`
-```bash
-(
-echo "parm ../../3_antechamber/S01/s01.top"
-while read f; do
-  echo "trajin $f"
-done < filelist_pdb.txt
-echo "trajout coords.cdf netcdf"
-echo "run"
-echo "quit"
-) > make_cdf.in
-```
-- paste directly on Terminal command
-- checking the content
-  - `head make_cdf.in`
+
 - example
 ```bash
 parm ../../3_antechamber/S01/s01.top
