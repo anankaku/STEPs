@@ -1,0 +1,35 @@
+&files
+  -parm  ./gaff2.dat
+  -o      fit.out
+&end
+
+&param
+
+ System ../3_antechamber/S01/s01.top ./S01/coords.cdf ./S01/energy.dat
+
+  ParmOutput frcmod
+  eunits    hartree,
+  accrep    report.m
+  verbose   1,
+
+  % -----------------------------
+  % Torsion fitting list (GAFF2 atom TYPES)
+  % Keep it minimal for the first fit
+  % -----------------------------
+
+  % Backbone / amide core
+  fith  c3  n   c   o
+
+  % Sidechain linkage around aromatic ring (you have ca + f)
+  fith  c3  ca  ca  ca
+  fith  ca  ca  ca  ca
+  fith  ca  ca  ca  f
+
+  % Optional: if N is bonded into aryl-substituted environment (common in peptoids)
+  % Uncomment only if you confirm such torsions exist in your .top dihedrals
+  % fith  ca  n   c   o
+  % fith  c3  c   n   c3
+
+  torsions 1
+  hrst     0.0002,
+&end
