@@ -1,0 +1,19 @@
+&files
+  -parm  ./gaff2.dat
+  -o fit.out
+&end
+
+&param
+ sys ../3_antechamber/S01/s01.top ./S01/coords.cdf ./S01/energy.dat
+  ParmOutput frcmod
+  eunits hartree,
+  verbose 1,
+
+ fith c3 n c o
+ fith c3 ca ca ca
+ fith ca ca ca ca
+ fith ca ca ca f
+
+  torsions 1
+  hrst 0.0002,
+&end

@@ -1,0 +1,411 @@
+&files
+  -parm  ./gaff2.dat
+  -d      STEPsv1.dat
+  -o      fit.out
+&end
+
+&param
+
+ System ../Coords/R01/R01.top ../Coords/R01/coords.cdf ../Coords/R01/energies.dat
+ System ../Coords/R02/R02.top ../Coords/R02/coords.cdf ../Coords/R02/energies.dat
+ System ../Coords/R03/R03.top ../Coords/R03/coords.cdf ../Coords/R03/energies.dat
+ System ../Coords/R04/R04.top ../Coords/R04/coords.cdf ../Coords/R04/energies.dat
+ System ../Coords/R05/R05.top ../Coords/R05/coords.cdf ../Coords/R05/energies.dat
+ System ../Coords/R06/R06.top ../Coords/R06/coords.cdf ../Coords/R06/energies.dat
+ System ../Coords/R07/R07.top ../Coords/R07/coords.cdf ../Coords/R07/energies.dat
+ System ../Coords/R08/R08.top ../Coords/R08/coords.cdf ../Coords/R08/energies.dat
+ System ../Coords/R09/R09.top ../Coords/R09/coords.cdf ../Coords/R09/energies.dat
+ System ../Coords/R10/R10.top ../Coords/R10/coords.cdf ../Coords/R10/energies.dat
+ System ../Coords/R11/R11.top ../Coords/R11/coords.cdf ../Coords/R11/energies.dat
+ System ../Coords/R12/R12.top ../Coords/R12/coords.cdf ../Coords/R12/energies.dat
+ System ../Coords/R13/R13.top ../Coords/R13/coords.cdf ../Coords/R13/energies.dat
+ System ../Coords/R14/R14.top ../Coords/R14/coords.cdf ../Coords/R14/energies.dat
+ System ../Coords/R15/R15.top ../Coords/R15/coords.cdf ../Coords/R15/energies.dat
+ System ../Coords/R16/R16.top ../Coords/R16/coords.cdf ../Coords/R16/energies.dat
+ System ../Coords/R17/R17.top ../Coords/R17/coords.cdf ../Coords/R17/energies.dat
+ System ../Coords/R18/R18.top ../Coords/R18/coords.cdf ../Coords/R18/energies.dat
+ System ../Coords/R19/R19.top ../Coords/R19/coords.cdf ../Coords/R19/energies.dat
+ System ../Coords/R20/R20.top ../Coords/R20/coords.cdf ../Coords/R20/energies.dat
+ System ../Coords/R21/R21.top ../Coords/R21/coords.cdf ../Coords/R21/energies.dat
+ System ../Coords/R22/R22.top ../Coords/R22/coords.cdf ../Coords/R22/energies.dat
+ System ../Coords/R23/R23.top ../Coords/R23/coords.cdf ../Coords/R23/energies.dat
+ System ../Coords/R24/R24.top ../Coords/R24/coords.cdf ../Coords/R24/energies.dat
+ System ../Coords/R25/R25.top ../Coords/R25/coords.cdf ../Coords/R25/energies.dat
+ System ../Coords/R26/R26.top ../Coords/R26/coords.cdf ../Coords/R26/energies.dat
+ System ../Coords/R27/R27.top ../Coords/R27/coords.cdf ../Coords/R27/energies.dat
+ System ../Coords/R28/R28.top ../Coords/R28/coords.cdf ../Coords/R28/energies.dat
+ System ../Coords/R29/R29.top ../Coords/R29/coords.cdf ../Coords/R29/energies.dat
+ System ../Coords/R30/R30.top ../Coords/R30/coords.cdf ../Coords/R30/energies.dat
+ System ../Coords/R31/R31.top ../Coords/R31/coords.cdf ../Coords/R31/energies.dat
+ System ../Coords/R32/R32.top ../Coords/R32/coords.cdf ../Coords/R32/energies.dat
+ System ../Coords/R33/R33.top ../Coords/R33/coords.cdf ../Coords/R33/energies.dat
+ System ../Coords/R34/R34.top ../Coords/R34/coords.cdf ../Coords/R34/energies.dat
+ System ../Coords/R35/R35.top ../Coords/R35/coords.cdf ../Coords/R35/energies.dat
+ System ../Coords/R36/R36.top ../Coords/R36/coords.cdf ../Coords/R36/energies.dat
+ System ../Coords/R37/R37.top ../Coords/R37/coords.cdf ../Coords/R37/energies.dat
+ System ../Coords/R38/R38.top ../Coords/R38/coords.cdf ../Coords/R38/energies.dat
+ System ../Coords/R39/R39.top ../Coords/R39/coords.cdf ../Coords/R39/energies.dat
+ System ../Coords/R40/R40.top ../Coords/R40/coords.cdf ../Coords/R40/energies.dat
+ System ../Coords/R41/R41.top ../Coords/R41/coords.cdf ../Coords/R41/energies.dat
+ System ../Coords/R42/R42.top ../Coords/R42/coords.cdf ../Coords/R42/energies.dat
+ System ../Coords/R43/R43.top ../Coords/R43/coords.cdf ../Coords/R43/energies.dat
+ System ../Coords/R44/R44.top ../Coords/R44/coords.cdf ../Coords/R44/energies.dat
+ System ../Coords/R45/R45.top ../Coords/R45/coords.cdf ../Coords/R45/energies.dat
+ System ../Coords/R46/R46.top ../Coords/R46/coords.cdf ../Coords/R46/energies.dat
+ System ../Coords/R47/R47.top ../Coords/R47/coords.cdf ../Coords/R47/energies.dat
+ System ../Coords/R48/R48.top ../Coords/R48/coords.cdf ../Coords/R48/energies.dat
+ System ../Coords/R49/R49.top ../Coords/R49/coords.cdf ../Coords/R49/energies.dat
+ System ../Coords/R50/R50.top ../Coords/R50/coords.cdf ../Coords/R50/energies.dat
+ System ../Coords/R51/R51.top ../Coords/R51/coords.cdf ../Coords/R51/energies.dat
+ System ../Coords/R52/R52.top ../Coords/R52/coords.cdf ../Coords/R52/energies.dat
+ System ../Coords/R53/R53.top ../Coords/R53/coords.cdf ../Coords/R53/energies.dat
+ System ../Coords/R54/R54.top ../Coords/R54/coords.cdf ../Coords/R54/energies.dat
+ System ../Coords/R55/R55.top ../Coords/R55/coords.cdf ../Coords/R55/energies.dat
+ System ../Coords/R56/R56.top ../Coords/R56/coords.cdf ../Coords/R56/energies.dat
+ System ../Coords/R57/R57.top ../Coords/R57/coords.cdf ../Coords/R57/energies.dat
+ System ../Coords/R58/R58.top ../Coords/R58/coords.cdf ../Coords/R58/energies.dat
+ System ../Coords/R59/R59.top ../Coords/R59/coords.cdf ../Coords/R59/energies.dat
+ System ../Coords/R60/R60.top ../Coords/R60/coords.cdf ../Coords/R60/energies.dat
+ System ../Coords/R61/R61.top ../Coords/R61/coords.cdf ../Coords/R61/energies.dat
+ System ../Coords/R62/R62.top ../Coords/R62/coords.cdf ../Coords/R62/energies.dat
+ System ../Coords/R63/R63.top ../Coords/R63/coords.cdf ../Coords/R63/energies.dat
+ System ../Coords/R64/R64.top ../Coords/R64/coords.cdf ../Coords/R64/energies.dat
+ System ../Coords/R65/R65.top ../Coords/R65/coords.cdf ../Coords/R65/energies.dat
+ System ../Coords/R66/R66.top ../Coords/R66/coords.cdf ../Coords/R66/energies.dat
+ System ../Coords/R67/R67.top ../Coords/R67/coords.cdf ../Coords/R67/energies.dat
+ System ../Coords/R68/R68.top ../Coords/R68/coords.cdf ../Coords/R68/energies.dat
+ System ../Coords/R69/R69.top ../Coords/R69/coords.cdf ../Coords/R69/energies.dat
+ System ../Coords/R70/R70.top ../Coords/R70/coords.cdf ../Coords/R70/energies.dat
+
+ System ../Coords/R01/R01.top ../Coords/R01/coords_iter1.cdf ../Coords/R01/energies_iter1.dat
+ System ../Coords/R02/R02.top ../Coords/R02/coords_iter1.cdf ../Coords/R02/energies_iter1.dat
+ System ../Coords/R03/R03.top ../Coords/R03/coords_iter1.cdf ../Coords/R03/energies_iter1.dat
+ System ../Coords/R04/R04.top ../Coords/R04/coords_iter1.cdf ../Coords/R04/energies_iter1.dat
+ System ../Coords/R05/R05.top ../Coords/R05/coords_iter1.cdf ../Coords/R05/energies_iter1.dat
+ System ../Coords/R06/R06.top ../Coords/R06/coords_iter1.cdf ../Coords/R06/energies_iter1.dat
+ System ../Coords/R07/R07.top ../Coords/R07/coords_iter1.cdf ../Coords/R07/energies_iter1.dat
+ System ../Coords/R08/R08.top ../Coords/R08/coords_iter1.cdf ../Coords/R08/energies_iter1.dat
+ System ../Coords/R09/R09.top ../Coords/R09/coords_iter1.cdf ../Coords/R09/energies_iter1.dat
+ System ../Coords/R10/R10.top ../Coords/R10/coords_iter1.cdf ../Coords/R10/energies_iter1.dat
+ System ../Coords/R11/R11.top ../Coords/R11/coords_iter1.cdf ../Coords/R11/energies_iter1.dat
+ System ../Coords/R12/R12.top ../Coords/R12/coords_iter1.cdf ../Coords/R12/energies_iter1.dat
+ System ../Coords/R13/R13.top ../Coords/R13/coords_iter1.cdf ../Coords/R13/energies_iter1.dat
+ System ../Coords/R14/R14.top ../Coords/R14/coords_iter1.cdf ../Coords/R14/energies_iter1.dat
+ System ../Coords/R15/R15.top ../Coords/R15/coords_iter1.cdf ../Coords/R15/energies_iter1.dat
+ System ../Coords/R16/R16.top ../Coords/R16/coords_iter1.cdf ../Coords/R16/energies_iter1.dat
+ System ../Coords/R17/R17.top ../Coords/R17/coords_iter1.cdf ../Coords/R17/energies_iter1.dat
+ System ../Coords/R18/R18.top ../Coords/R18/coords_iter1.cdf ../Coords/R18/energies_iter1.dat
+ System ../Coords/R19/R19.top ../Coords/R19/coords_iter1.cdf ../Coords/R19/energies_iter1.dat
+ System ../Coords/R20/R20.top ../Coords/R20/coords_iter1.cdf ../Coords/R20/energies_iter1.dat
+ System ../Coords/R21/R21.top ../Coords/R21/coords_iter1.cdf ../Coords/R21/energies_iter1.dat
+ System ../Coords/R22/R22.top ../Coords/R22/coords_iter1.cdf ../Coords/R22/energies_iter1.dat
+ System ../Coords/R23/R23.top ../Coords/R23/coords_iter1.cdf ../Coords/R23/energies_iter1.dat
+ System ../Coords/R24/R24.top ../Coords/R24/coords_iter1.cdf ../Coords/R24/energies_iter1.dat
+ System ../Coords/R25/R25.top ../Coords/R25/coords_iter1.cdf ../Coords/R25/energies_iter1.dat
+ System ../Coords/R26/R26.top ../Coords/R26/coords_iter1.cdf ../Coords/R26/energies_iter1.dat
+ System ../Coords/R27/R27.top ../Coords/R27/coords_iter1.cdf ../Coords/R27/energies_iter1.dat
+ System ../Coords/R28/R28.top ../Coords/R28/coords_iter1.cdf ../Coords/R28/energies_iter1.dat
+ System ../Coords/R29/R29.top ../Coords/R29/coords_iter1.cdf ../Coords/R29/energies_iter1.dat
+ System ../Coords/R30/R30.top ../Coords/R30/coords_iter1.cdf ../Coords/R30/energies_iter1.dat
+ System ../Coords/R31/R31.top ../Coords/R31/coords_iter1.cdf ../Coords/R31/energies_iter1.dat
+ System ../Coords/R32/R32.top ../Coords/R32/coords_iter1.cdf ../Coords/R32/energies_iter1.dat
+ System ../Coords/R33/R33.top ../Coords/R33/coords_iter1.cdf ../Coords/R33/energies_iter1.dat
+ System ../Coords/R34/R34.top ../Coords/R34/coords_iter1.cdf ../Coords/R34/energies_iter1.dat
+ System ../Coords/R35/R35.top ../Coords/R35/coords_iter1.cdf ../Coords/R35/energies_iter1.dat
+ System ../Coords/R36/R36.top ../Coords/R36/coords_iter1.cdf ../Coords/R36/energies_iter1.dat
+ System ../Coords/R37/R37.top ../Coords/R37/coords_iter1.cdf ../Coords/R37/energies_iter1.dat
+ System ../Coords/R38/R38.top ../Coords/R38/coords_iter1.cdf ../Coords/R38/energies_iter1.dat
+ System ../Coords/R39/R39.top ../Coords/R39/coords_iter1.cdf ../Coords/R39/energies_iter1.dat
+ System ../Coords/R40/R40.top ../Coords/R40/coords_iter1.cdf ../Coords/R40/energies_iter1.dat
+ System ../Coords/R41/R41.top ../Coords/R41/coords_iter1.cdf ../Coords/R41/energies_iter1.dat
+ System ../Coords/R42/R42.top ../Coords/R42/coords_iter1.cdf ../Coords/R42/energies_iter1.dat
+ System ../Coords/R43/R43.top ../Coords/R43/coords_iter1.cdf ../Coords/R43/energies_iter1.dat
+ System ../Coords/R44/R44.top ../Coords/R44/coords_iter1.cdf ../Coords/R44/energies_iter1.dat
+ System ../Coords/R45/R45.top ../Coords/R45/coords_iter1.cdf ../Coords/R45/energies_iter1.dat
+ System ../Coords/R46/R46.top ../Coords/R46/coords_iter1.cdf ../Coords/R46/energies_iter1.dat
+ System ../Coords/R47/R47.top ../Coords/R47/coords_iter1.cdf ../Coords/R47/energies_iter1.dat
+ System ../Coords/R48/R48.top ../Coords/R48/coords_iter1.cdf ../Coords/R48/energies_iter1.dat
+ System ../Coords/R49/R49.top ../Coords/R49/coords_iter1.cdf ../Coords/R49/energies_iter1.dat
+ System ../Coords/R50/R50.top ../Coords/R50/coords_iter1.cdf ../Coords/R50/energies_iter1.dat
+ System ../Coords/R51/R51.top ../Coords/R51/coords_iter1.cdf ../Coords/R51/energies_iter1.dat
+ System ../Coords/R52/R52.top ../Coords/R52/coords_iter1.cdf ../Coords/R52/energies_iter1.dat
+ System ../Coords/R53/R53.top ../Coords/R53/coords_iter1.cdf ../Coords/R53/energies_iter1.dat
+ System ../Coords/R54/R54.top ../Coords/R54/coords_iter1.cdf ../Coords/R54/energies_iter1.dat
+ System ../Coords/R55/R55.top ../Coords/R55/coords_iter1.cdf ../Coords/R55/energies_iter1.dat
+ System ../Coords/R56/R56.top ../Coords/R56/coords_iter1.cdf ../Coords/R56/energies_iter1.dat
+ System ../Coords/R57/R57.top ../Coords/R57/coords_iter1.cdf ../Coords/R57/energies_iter1.dat
+ System ../Coords/R58/R58.top ../Coords/R58/coords_iter1.cdf ../Coords/R58/energies_iter1.dat
+ System ../Coords/R59/R59.top ../Coords/R59/coords_iter1.cdf ../Coords/R59/energies_iter1.dat
+ System ../Coords/R60/R60.top ../Coords/R60/coords_iter1.cdf ../Coords/R60/energies_iter1.dat
+ System ../Coords/R62/R62.top ../Coords/R62/coords_iter1.cdf ../Coords/R62/energies_iter1.dat
+ System ../Coords/R63/R63.top ../Coords/R63/coords_iter1.cdf ../Coords/R63/energies_iter1.dat
+ System ../Coords/R64/R64.top ../Coords/R64/coords_iter1.cdf ../Coords/R64/energies_iter1.dat
+ System ../Coords/R65/R65.top ../Coords/R65/coords_iter1.cdf ../Coords/R65/energies_iter1.dat
+ System ../Coords/R66/R66.top ../Coords/R66/coords_iter1.cdf ../Coords/R66/energies_iter1.dat
+ System ../Coords/R67/R67.top ../Coords/R67/coords_iter1.cdf ../Coords/R67/energies_iter1.dat
+ System ../Coords/R68/R68.top ../Coords/R68/coords_iter1.cdf ../Coords/R68/energies_iter1.dat
+ System ../Coords/R69/R69.top ../Coords/R69/coords_iter1.cdf ../Coords/R69/energies_iter1.dat
+ System ../Coords/R70/R70.top ../Coords/R70/coords_iter1.cdf ../Coords/R70/energies_iter1.dat
+
+  ParmOutput frcmod
+  eunits    hartree,
+  accrep    report.m
+  verbose    1,
+
+  % Torsion fitting input
+
+ fith c3 n c o
+ fith c c3 c3 c3
+
+
+ fith c c3 c3 n
+ fith c c3 n c
+ fith c c3 n c3
+ fith c c3 n ca
+ fith c c3 n ce
+
+ fith c2 ce ce c2
+ fith c2 ce ce ha
+ fith c2 ce ce n
+ fith c2 ce n c
+ fith c2 ce n c3
+ fith c3 c n c3
+ fith c3 c n ca
+ 
+ fith c3 c oh ho
+ 
+ fith c3 c3 c3 c3
+
+ fith c3 c3 c3 hc
+ fith c3 c3 c3 n
+
+ fith c3 c3 c3 n3
+ fith c3 c3 c3 oh
+ 
+ fith c3 c3 ca ca
+ fith c3 c3 n c
+
+ fith c3 c3 n3 c3
+ fith c3 c3 n3 hn
+ fith c3 c3 oh ho
+ fith c3 c3 os c3
+
+ fith c3 c3 ss c3
+ 
+ fith c3 ca ca ca
+ 
+ 
+ fith ca c3 c3 n
+ fith ca c3 ca ca
+ 
+ fith ca ca ca ca
+ fith ca ca ca cc
+ fith ca ca ca cl
+ 
+ fith ca ca ca f
+ fith ca ca ca ha
+ fith ca ca ca n
+ fith ca ca ca na
+ fith ca ca ca nh
+ fith ca ca ca no
+ fith ca ca ca oh
+ fith ca ca cc c3
+ fith ca ca cc cd
+ 
+ fith ca ca cp cp
+ fith ca ca n c
+ 
+ fith ca ca no o
+ fith ca ca oh ho
+ 
+ fith ca cp cp ca
+ 
+ 
+ fith ce ce n c
+ fith ce ce n c3
+ 
+ 
+ fith h1 c3 c3 oh
+ fith h1 c3 c3 os
+ 
+ fith h1 c3 cx cx
+ fith h1 c3 cx hc
+ fith h1 c3 n c
+ 
+ fith h1 c3 n2 c2
+ fith h1 c3 n3 c3
+ 
+ fith h1 c3 oh ho
+ fith h1 c3 os c3
+ fith h1 c3 sh hs
+ fith h1 c3 ss c3
+ 
+ 
+ fith ha ca cp ca
+ 
+ fith hc c3 c3 hc
+ 
+ fith hc c3 c3 n3
+ fith hc c3 c3 oh
+ fith hc c3 c3 os
+ fith hc c3 ca ca
+ 
+ fith n c c3 c3
+ 
+ fith n c c3 n
+ 
+ fith n c3 c3 oh
+ 
+ fith n c3 c3 sh
+ 
+ fith n c3 cx cx
+ fith n c3 cx hc
+ 
+ fith o c c3 c3
+ fith o c c3 h1
+ fith o c c3 hc
+ 
+ fith o c n c3
+ 
+ fith o c n hn
+ fith o c oh ho
+ 
+ fith c c3 c3 h1
+ fith c c3 c3 hc
+ fith c2 c3 c3 c2
+ fith c2 c3 c3 c3
+ fith c2 c3 c3 hc
+ fith c3 c n ce
+ fith c3 c n hn
+ fith c3 c2 ce ce
+ fith c3 c2 ce ha
+ fith c3 c2 ce n
+ fith c3 c3 c3 ca
+ fith c3 c3 c3 h1
+ fith c3 c3 c3 n2
+ fith c3 c3 c3 os
+ fith c3 c3 n c3
+ fith c3 c3 n2 c2
+ fith c3 c3 sh hs
+ fith c3 ca ca c3
+ fith c3 ca ca cl
+ fith c3 ca ca f
+ fith c3 ca ca ha
+ fith c3 ca ca n
+ fith c3 ca ca oh
+ fith c3 cc cd h4
+ fith c3 cc cd na
+ fith c3 cc nc cd
+ fith c3 cx cx cx
+ fith c3 cx cx hc
+ fith ca c3 c3 h1
+ fith ca c3 c3 hc
+ fith ca c3 n c
+ fith ca c3 n c3
+ fith ca c3 n3 c3
+ fith ca ca ca cp
+ fith ca ca cp ca
+ fith ca ca n c3
+ fith ca ca na cd
+ fith ca ca na hn
+ fith ca ca nh hn
+ fith ca cc cd h4
+ fith ca cc cd na
+ fith cc c3 n c
+ fith cc c3 n c3
+ fith cc ca ca ha
+ fith cc ca ca na
+ fith cc cd na ca
+ fith cc cd na cd
+ fith cc cd na hn
+ fith cd cc nc cd
+ fith ce c2 c3 c3
+ fith ce c2 c3 hc
+ fith cl ca ca ha
+ fith cp ca ca ha
+ fith cp ca ca n
+ fith cx c3 n c
+ fith cx c3 n c3
+ fith cx cx cx cx
+ fith cx cx cx hc
+ fith f ca ca f
+ fith f ca ca ha
+ fith h1 c3 c3 h1
+ fith h1 c3 c3 hc
+ fith h1 c3 c3 n
+ fith h1 c3 c3 n3
+ fith h1 c3 c3 sh
+ fith h1 c3 c3 ss
+ fith h1 c3 ca ca
+ fith h1 c3 cc ca
+ fith h1 c3 cc cd
+ fith h1 c3 cc nc
+ fith h1 c3 n c3
+ fith h1 c3 n ca
+ fith h1 c3 n ce
+ fith h1 c3 n3 hn
+ fith h2 c3 c3 hc
+ fith h2 c3 n c
+ fith h2 c3 n c3
+ fith h2 c3 oh ho
+ fith h2 c3 sh hs
+ fith h4 cd na ca
+ fith h4 cd na cd
+ fith h4 cd na hn
+ fith h5 cd na cd
+ fith h5 cd na hn
+ fith h5 cd nc cc
+ fith ha c2 c3 c3
+ fith ha c2 c3 hc
+ fith ha c2 ce ce
+ fith ha c2 ce ha
+ fith ha c2 ce n
+ fith ha ca ca ha
+ fith ha ca ca n
+ fith ha ca ca na
+ fith ha ca ca nh
+ fith ha ca ca no
+ fith ha ca ca oh
+ fith ha ca cp cp
+ fith ha ce ce n
+ fith hc c3 c3 n
+ fith hc c3 c3 n2
+ fith hc cx cx hc
+ fith n c c3 h1
+ fith n c c3 hc
+ fith n c3 c3 n3
+ fith n c3 c3 os
+ fith n c3 c3 ss
+ fith n c3 ca ca
+ fith n c3 cc ca
+ fith n c3 cc cd
+ fith n c3 cc nc
+ fith n c3 oh ho
+ fith n c3 sh hs
+ fith n ca ca oh
+ fith n2 c2 nh hn
+ fith n3 c3 ca ca
+ fith na cd nc cc
+ fith nc cc cd h4
+ fith nc cc cd na
+ fith nc cd na cd
+ fith nc cd na hn
+ fith nh c2 n2 c3
+ fith nh c2 nh hn
+ fith o c c3 n
+ fith o c n ca
+ fith o c n ce
+ fith oh c c3 c3
+ fith oh c c3 h1
+ fith oh c c3 hc
+ fith oh c c3 n
+ fith oh c3 n c
+ fith oh c3 n c3
+ fith oh ca ca oh
+ fith sh c3 n c
+ fith sh c3 n c3
+
+
+  torsions 1
+  hrst      0.0002,
+&end

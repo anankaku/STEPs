@@ -1,0 +1,472 @@
+logfile q4md-forcefieldtools.log
+
+# Web site: http://ambermd.org/doc6/html/AMBER-sh-5.9.html#sh-5.9.8
+alias q quit
+alias e edit
+alias c charge
+
+# Web site: http://ambermd.org/doc6/html/AMBER-sh-5.9.html#sh-5.9.73
+verbosity 2
+
+# Web site: http://ambermd.org/doc6/html/AMBER-sh-5.9.html#sh-5.9.2
+addAtomTypes {
+         { "C"   "C"   "sp2" }
+         { "CT"  "C"   "sp3" }
+         { "H1"  "H"   "sp3" }
+         { "HC"  "H"   "sp3" }
+         { "N"   "N"   "sp2" }
+         { "O"   "O"   "sp2" }
+}
+### Cap groups
+NME = loadmol3 ./Mol2/NME.mol2
+ACE = loadmol3 ./Mol2/ACE.mol2
+OTB = loadmol3 ./Mol2/OTB.mol2
+NH2 = loadmol3 ./Mol2/NH2.mol2
+
+### Residues
+R01 = loadmol3 ./Mol2/R01.mol2
+R02 = loadmol3 ./Mol2/R02_avg.mol2 
+R03 = loadmol3 ./Mol2/R03.mol2
+R04 = loadmol3 ./Mol2/R04.mol2
+R05 = loadmol3 ./Mol2/R05.mol2
+R06 = loadmol3 ./Mol2/R06.mol2
+R07 = loadmol3 ./Mol2/R07.mol2
+R08 = loadmol3 ./Mol2/R08.mol2
+R09 = loadmol3 ./Mol2/R09_avg.mol2
+R10 = loadmol3 ./Mol2/R10.mol2
+R11 = loadmol3 ./Mol2/R11.mol2
+R12 = loadmol3 ./Mol2/R12.mol2
+R13 = loadmol3 ./Mol2/R13.mol2
+R14 = loadmol3 ./Mol2/R14.mol2
+R15 = loadmol3 ./Mol2/R15.mol2
+R16 = loadmol3 ./Mol2/R16.mol2
+R17 = loadmol3 ./Mol2/R17.mol2
+R18 = loadmol3 ./Mol2/R18.mol2
+R19 = loadmol3 ./Mol2/R19.mol2
+R20 = loadmol3 ./Mol2/R20.mol2
+R21 = loadmol3 ./Mol2/R21.mol2
+R22 = loadmol3 ./Mol2/R22.mol2
+R23 = loadmol3 ./Mol2/R23.mol2
+R24 = loadmol3 ./Mol2/R24.mol2
+R25 = loadmol3 ./Mol2/R25.mol2
+R26 = loadmol3 ./Mol2/R26.mol2
+R27 = loadmol3 ./Mol2/R27.mol2
+R28 = loadmol3 ./Mol2/R28.mol2
+R29 = loadmol3 ./Mol2/R29.mol2
+R30 = loadmol3 ./Mol2/R30.mol2
+R31 = loadmol3 ./Mol2/R31.mol2
+R32 = loadmol3 ./Mol2/R32.mol2
+R33 = loadmol3 ./Mol2/R33.mol2
+R34 = loadmol3 ./Mol2/R34.mol2
+R35 = loadmol3 ./Mol2/R35.mol2
+R36 = loadmol3 ./Mol2/R36.mol2
+R37 = loadmol3 ./Mol2/R37.mol2
+R38 = loadmol3 ./Mol2/R38.mol2
+R39 = loadmol3 ./Mol2/R39.mol2
+R40 = loadmol3 ./Mol2/R40.mol2
+R41 = loadmol3 ./Mol2/R41.mol2
+R42 = loadmol3 ./Mol2/R42.mol2
+R43 = loadmol3 ./Mol2/R43.mol2
+R44 = loadmol3 ./Mol2/R44.mol2
+R45 = loadmol3 ./Mol2/R45.mol2
+R46 = loadmol3 ./Mol2/R46.mol2
+R47 = loadmol3 ./Mol2/R47.mol2
+R48 = loadmol3 ./Mol2/R48.mol2
+R49 = loadmol3 ./Mol2/R49.mol2
+R50 = loadmol3 ./Mol2/R50.mol2
+R51 = loadmol3 ./Mol2/R51.mol2
+R52 = loadmol3 ./Mol2/R52.mol2
+R53 = loadmol3 ./Mol2/R53.mol2
+R54 = loadmol3 ./Mol2/R54_avg.mol2
+R55 = loadmol3 ./Mol2/R55_avg.mol2
+R56 = loadmol3 ./Mol2/R56_avg.mol2
+R57 = loadmol3 ./Mol2/R57_avg.mol2
+R58 = loadmol3 ./Mol2/R58_avg.mol2
+R59 = loadmol3 ./Mol2/R59.mol2
+R60 = loadmol3 ./Mol2/R60.mol2
+R61 = loadmol3 ./Mol2/R61.mol2
+R62 = loadmol3 ./Mol2/R62.mol2
+R63 = loadmol3 ./Mol2/R63.mol2
+R64 = loadmol3 ./Mol2/R64.mol2
+R65 = loadmol3 ./Mol2/R65.mol2
+R66 = loadmol3 ./Mol2/R66.mol2
+R67 = loadmol3 ./Mol2/R67.mol2
+R68 = loadmol3 ./Mol2/R68.mol2
+R69 = loadmol3 ./Mol2/R69.mol2
+R70 = loadmol3 ./Mol2/R70.mol2
+
+
+# ACE nterminal
+set ACE tail ACE.1.C
+set ACE.1 connect1 ACE.1.C
+# NME cterminal
+set NME head NME.1.N
+set NME.1 connect0 NME.1.N
+# OTB term
+set OTB head OTB.1.O
+set OTB.1 connect0 OTB.1.O
+# NH2 term
+set NH2 head NH2.1.N
+set NH2.1 connect0 NH2.1.N
+
+# R01  
+set R01 head R01.1.N
+set R01 tail R01.1.C
+set R01.1 connect0 R01.1.N
+set R01.1 connect1 R01.1.C
+# R02  
+set R02 head R02.1.N
+set R02 tail R02.1.C
+set R02.1 connect0 R02.1.N
+set R02.1 connect1 R02.1.C
+# R03
+set R03 head R03.1.N
+set R03 tail R03.1.C
+set R03.1 connect0 R03.1.N
+set R03.1 connect1 R03.1.C
+# R04
+set R04 head R04.1.N
+set R04 tail R04.1.C
+set R04.1 connect0 R04.1.N
+set R04.1 connect1 R04.1.C
+# R05
+set R05 head R05.1.N
+set R05 tail R05.1.C
+set R05.1 connect0 R05.1.N
+set R05.1 connect1 R05.1.C
+# R06
+set R06 head R06.1.N
+set R06 tail R06.1.C
+set R06.1 connect0 R06.1.N
+set R06.1 connect1 R06.1.C
+# R07
+set R07 head R07.1.N
+set R07 tail R07.1.C
+set R07.1 connect0 R07.1.N
+set R07.1 connect1 R07.1.C
+# R08
+set R08 head R08.1.N
+set R08 tail R08.1.C
+set R08.1 connect0 R08.1.N
+set R08.1 connect1 R08.1.C
+# R09
+set R09 head R09.1.N
+set R09 tail R09.1.C
+set R09.1 connect0 R09.1.N
+set R09.1 connect1 R09.1.C
+# R10
+set R10 head R10.1.N
+set R10 tail R10.1.C
+set R10.1 connect0 R10.1.N
+set R10.1 connect1 R10.1.C
+# R11
+set R11 head R11.1.N
+set R11 tail R11.1.C
+set R11.1 connect0 R11.1.N
+set R11.1 connect1 R11.1.C
+# R12
+set R12 head R12.1.N
+set R12 tail R12.1.C
+set R12.1 connect0 R12.1.N
+set R12.1 connect1 R12.1.C
+# R13
+set R13 head R13.1.N
+set R13 tail R13.1.C
+set R13.1 connect0 R13.1.N
+set R13.1 connect1 R13.1.C
+# R14
+set R14 head R14.1.N
+set R14 tail R14.1.C
+set R14.1 connect0 R14.1.N
+set R14.1 connect1 R14.1.C
+# R15
+set R15 head R15.1.N
+set R15 tail R15.1.C
+set R15.1 connect0 R15.1.N
+set R15.1 connect1 R15.1.C
+# R16
+set R16 head R16.1.N
+set R16 tail R16.1.C
+set R16.1 connect0 R16.1.N
+set R16.1 connect1 R16.1.C
+# R17
+set R17 head R17.1.N
+set R17 tail R17.1.C
+set R17.1 connect0 R17.1.N
+set R17.1 connect1 R17.1.C
+# R18
+set R18 head R18.1.N
+set R18 tail R18.1.C
+set R18.1 connect0 R18.1.N
+set R18.1 connect1 R18.1.C
+# R19
+set R19 head R19.1.N
+set R19 tail R19.1.C
+set R19.1 connect0 R19.1.N
+set R19.1 connect1 R19.1.C
+# R20
+set R20 head R20.1.N
+set R20 tail R20.1.C
+set R20.1 connect0 R20.1.N
+set R20.1 connect1 R20.1.C
+# R21
+set R21 head R21.1.N
+set R21 tail R21.1.C
+set R21.1 connect0 R21.1.N
+set R21.1 connect1 R21.1.C
+# R22
+set R22 head R22.1.N
+set R22 tail R22.1.C
+set R22.1 connect0 R22.1.N
+set R22.1 connect1 R22.1.C
+# R23
+set R23 head R23.1.N
+set R23 tail R23.1.C
+set R23.1 connect0 R23.1.N
+set R23.1 connect1 R23.1.C
+# R24
+set R24 head R24.1.N
+set R24 tail R24.1.C
+set R24.1 connect0 R24.1.N
+set R24.1 connect1 R24.1.C
+# R25
+set R25 head R25.1.N
+set R25 tail R25.1.C
+set R25.1 connect0 R25.1.N
+set R25.1 connect1 R25.1.C
+# R26
+set R26 head R26.1.N
+set R26 tail R26.1.C
+set R26.1 connect0 R26.1.N
+set R26.1 connect1 R26.1.C
+# R27
+set R27 head R27.1.N
+set R27 tail R27.1.C
+set R27.1 connect0 R27.1.N
+set R27.1 connect1 R27.1.C
+# R28
+set R28 head R28.1.N
+set R28 tail R28.1.C
+set R28.1 connect0 R28.1.N
+set R28.1 connect1 R28.1.C
+# R29
+set R29 head R29.1.N
+set R29 tail R29.1.C
+set R29.1 connect0 R29.1.N
+set R29.1 connect1 R29.1.C
+# R30
+set R30 head R30.1.N
+set R30 tail R30.1.C
+set R30.1 connect0 R30.1.N
+set R30.1 connect1 R30.1.C
+# R31
+set R31 head R31.1.N
+set R31 tail R31.1.C
+set R31.1 connect0 R31.1.N
+set R31.1 connect1 R31.1.C
+# R32
+set R32 head R32.1.N
+set R32 tail R32.1.C
+set R32.1 connect0 R32.1.N
+set R32.1 connect1 R32.1.C
+# R33
+set R33 head R33.1.N
+set R33 tail R33.1.C
+set R33.1 connect0 R33.1.N
+set R33.1 connect1 R33.1.C
+# R34
+set R34 head R34.1.N
+set R34 tail R34.1.C
+set R34.1 connect0 R34.1.N
+set R34.1 connect1 R34.1.C
+# R35
+set R35 head R35.1.N
+set R35 tail R35.1.C
+set R35.1 connect0 R35.1.N
+set R35.1 connect1 R35.1.C
+# R36
+set R36 head R36.1.N
+set R36 tail R36.1.C
+set R36.1 connect0 R36.1.N
+set R36.1 connect1 R36.1.C
+# R37
+set R37 head R37.1.N
+set R37 tail R37.1.C
+set R37.1 connect0 R37.1.N
+set R37.1 connect1 R37.1.C
+# R38
+set R38 head R38.1.N
+set R38 tail R38.1.C
+set R38.1 connect0 R38.1.N
+set R38.1 connect1 R38.1.C
+# R39
+set R39 head R39.1.N
+set R39 tail R39.1.C
+set R39.1 connect0 R39.1.N
+set R39.1 connect1 R39.1.C
+# R40
+set R40 head R40.1.N
+set R40 tail R40.1.C
+set R40.1 connect0 R40.1.N
+set R40.1 connect1 R40.1.C
+# R41
+set R41 head R41.1.N
+set R41 tail R41.1.C
+set R41.1 connect0 R41.1.N
+set R41.1 connect1 R41.1.C
+# R42
+set R42 head R42.1.N
+set R42 tail R42.1.C
+set R42.1 connect0 R42.1.N
+set R42.1 connect1 R42.1.C
+# R43
+set R43 head R43.1.N
+set R43 tail R43.1.C
+set R43.1 connect0 R43.1.N
+set R43.1 connect1 R43.1.C
+# R44
+set R44 head R44.1.N
+set R44 tail R44.1.C
+set R44.1 connect0 R44.1.N
+set R44.1 connect1 R44.1.C
+# R45
+set R45 head R45.1.N
+set R45 tail R45.1.C
+set R45.1 connect0 R45.1.N
+set R45.1 connect1 R45.1.C
+# R46
+set R46 head R46.1.N
+set R46 tail R46.1.C
+set R46.1 connect0 R46.1.N
+set R46.1 connect1 R46.1.C
+# R47
+set R47 head R47.1.N
+set R47 tail R47.1.C
+set R47.1 connect0 R47.1.N
+set R47.1 connect1 R47.1.C
+# R48
+set R48 head R48.1.N
+set R48 tail R48.1.C
+set R48.1 connect0 R48.1.N
+set R48.1 connect1 R48.1.C
+# R49
+set R49 head R49.1.N
+set R49 tail R49.1.C
+set R49.1 connect0 R49.1.N
+set R49.1 connect1 R49.1.C
+# R50
+set R50 head R50.1.N
+set R50 tail R50.1.C
+set R50.1 connect0 R50.1.N
+set R50.1 connect1 R50.1.C
+# R51
+set R51 head R51.1.N
+set R51 tail R51.1.C
+set R51.1 connect0 R51.1.N
+set R51.1 connect1 R51.1.C
+# R52
+set R52 head R52.1.N
+set R52 tail R52.1.C
+set R52.1 connect0 R52.1.N
+set R52.1 connect1 R52.1.C
+# R53
+set R53 head R53.1.N
+set R53 tail R53.1.C
+set R53.1 connect0 R53.1.N
+set R53.1 connect1 R53.1.C
+# R54
+set R54 head R54.1.N
+set R54 tail R54.1.C
+set R54.1 connect0 R54.1.N
+set R54.1 connect1 R54.1.C
+# R55
+set R55 head R55.1.N
+set R55 tail R55.1.C
+set R55.1 connect0 R55.1.N
+set R55.1 connect1 R55.1.C
+# R56
+set R56 head R56.1.N
+set R56 tail R56.1.C
+set R56.1 connect0 R56.1.N
+set R56.1 connect1 R56.1.C
+# R57
+set R57 head R57.1.N
+set R57 tail R57.1.C
+set R57.1 connect0 R57.1.N
+set R57.1 connect1 R57.1.C
+# R58
+set R58 head R58.1.N
+set R58 tail R58.1.C
+set R58.1 connect0 R58.1.N
+set R58.1 connect1 R58.1.C
+# R59
+set R59 head R59.1.N
+set R59 tail R59.1.C
+set R59.1 connect0 R59.1.N
+set R59.1 connect1 R59.1.C
+# R60
+set R60 head R60.1.N
+set R60 tail R60.1.C
+set R60.1 connect0 R60.1.N
+set R60.1 connect1 R60.1.C
+# R61
+set R61 head R61.1.N
+set R61 tail R61.1.C
+set R61.1 connect0 R61.1.N
+set R61.1 connect1 R61.1.C
+# R62
+set R62 head R62.1.N
+set R62 tail R62.1.C
+set R62.1 connect0 R62.1.N
+set R62.1 connect1 R62.1.C
+# R63
+set R63 head R63.1.N
+set R63 tail R63.1.C
+set R63.1 connect0 R63.1.N
+set R63.1 connect1 R63.1.C
+# R64
+set R64 head R64.1.N
+set R64 tail R64.1.C
+set R64.1 connect0 R64.1.N
+set R64.1 connect1 R64.1.C
+# R65
+set R65 head R65.1.N
+set R65 tail R65.1.C
+set R65.1 connect0 R65.1.N
+set R65.1 connect1 R65.1.C
+# R66
+set R66 head R66.1.N
+set R66 tail R66.1.C
+set R66.1 connect0 R66.1.N
+set R66.1 connect1 R66.1.C
+# R67
+set R67 head R67.1.N
+set R67 tail R67.1.C
+set R67.1 connect0 R67.1.N
+set R67.1 connect1 R67.1.C
+# R68
+set R68 head R68.1.N
+set R68 tail R68.1.C
+set R68.1 connect0 R68.1.N
+set R68.1 connect1 R68.1.C
+# R69
+set R69 head R69.1.N
+set R69 tail R69.1.C
+set R69.1 connect0 R69.1.N
+set R69.1 connect1 R69.1.C
+# R70
+set R70 head R70.1.N
+set R70 tail R70.1.C
+set R70.1 connect0 R70.1.N
+set R70.1 connect1 R70.1.C
+
+source leaprc.gaff2
+loadamberparams Parameters/STEPsv1.dat
+loadamberparams Parameters/addOTB.dat
+
+peptoid = sequence {ACE R01 NME}
+
+saveamberparm peptoid disarcosine.top disarcosine.crd
+savepdb peptoid disarcosine.pdb
+
+q

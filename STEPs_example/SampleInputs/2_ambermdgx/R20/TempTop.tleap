@@ -1,0 +1,6 @@
+source leaprc.gaff2
+loadAmberPrep R20.prepi
+x = loadPdb "RXXvmd.pdb"
+setBox x vdw 10.0
+saveAmberParm x R20.top RXZ.crd
+quit
