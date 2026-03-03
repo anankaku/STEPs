@@ -1,0 +1,30 @@
+&files
+  -p    ../../3_antechamber/S02/s02.top
+  -c    ../../3_antechamber/S02/s02.crd
+  -o    GenConformers.out
+&end
+
+&configs
+  GridSample:1@C2 :1@N :1@C10 :1@C11 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@N :1@C10 :1@C11 :1@N1 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@O :1@C1 :1@N :1@C10 { -180.0 180.0 }  Krst 64.0
+  
+  GridSample:1@C1 :1@N :1@C2 :1@C4 { -180.0 180.0 }  Krst 64.0
+
+  RandomSample:1@C2 :1@N :1@C1 {  105.0 135.0 }   Krst 256.0
+  RandomSample:1@C2 :1@N :1@C10 {  105.0 135.0 }   Krst 256.0
+
+  combine 1 2 3 4  
+  count 10
+  verbose 1
+
+  % Controls on the quantum mechanical operations
+  qmlev    'B3LYP',
+  basis    '6-31G**',
+
+  % Output controls: TAKE NOTE, this will generate a lot of files so
+  % do this in a clean directory that you won't ls very often.
+  write   'pdb', 'gaussian'
+  outbase 'Conf', 'Conf'
+  outsuff 'pdb',  'com'
+&end
