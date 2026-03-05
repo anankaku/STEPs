@@ -4,7 +4,7 @@
 <++> Written by David S. Cerutti, Case Group (2009 - 2020)                 <++>
 <++>-----------------------------------------------------------------------<++>
 
-Run on Wed Mar  4 20:51:09 2026
+Run on Wed Mar  4 20:56:05 2026
 <++>-----------------------------------------------------------------------<++>
 
 INPUT LINE TEXT:
@@ -15,8 +15,8 @@ mdgx -i test_10.mdgx
 INPUT FILE TEXT:
 
 &files
-  -p    ../../3_antechamber/S01/s01.top
-  -c    ../../3_antechamber/S01/s01.crd
+  -p    ../../3_antechamber/S05/s05.top
+  -c    ../../3_antechamber/S05/s05.crd
   -o    GenConformers.out
 &end
 
@@ -54,11 +54,11 @@ INPUT FILE TEXT:
  Statistic                Mean Value    Std. Dev.   Min. Value   Max. Value  
                            (kcal/mol)   (kcal/mol)   (kcal/mol)   (kcal/mol) 
  ------------------------ ------------ ------------ ------------ ------------
- Initial E(Model) (a)          47.9662       0.0000      47.9662      47.9662
+ Initial E(Model) (a)          38.3421       0.0000      38.3421      38.3421
  Initial E(Restraint) (b)       0.0000       0.0000       0.0000       0.0000
- Final E(Model) (c)            36.2372       0.0000      36.2372      36.2372
+ Final E(Model) (c)            22.0558       0.0000      22.0558      22.0558
  Final E(Restraint) (d)         0.0000       0.0000       0.0000       0.0000
- Delta E(Model) (e)           -11.7289       0.0000     -11.7289     -11.7289
+ Delta E(Model) (e)           -16.2863       0.0000     -16.2863     -16.2863
  Delta E(Restraint) (f)         0.0000       0.0000       0.0000       0.0000
 
   (a) The energies of the initial models, without the restraint energy (this 
@@ -83,14 +83,14 @@ INPUT FILE TEXT:
      were printed.  The next section presents counts of configurations passing 
      the basic sanity checks.
 
- - Average steps to convergence:     810 +/-    0
- - Total converged configurations:     1
- - Unconverged configurations:         9
+ - Average steps to convergence:   -2147483648 +/-    0
+ - Total converged configurations:     0
+ - Unconverged configurations:        10
 
  - Average of the maximal residual force
-   on NON-converged configurations:        9.809447e-06 kcal/mol-A
+   on NON-converged configurations:        2.043182e-02 kcal/mol-A
  - Average residual forces on frequently strained atoms:
-     Atom    7, C4   ( 9 configs):         9.809447e-06 kcal/mol-A
+     Atom    2, C1   (10 configs):         2.043182e-02 kcal/mol-A
 
 <++>-----------------------------------------------------------------------<++>
 

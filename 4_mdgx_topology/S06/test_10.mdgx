@@ -1,18 +1,18 @@
 &files
-  -p    ../../3_antechamber/S01/s01.top
-  -c    ../../3_antechamber/S01/s01.crd
+  -p    ../../3_antechamber/S06/s06.top
+  -c    ../../3_antechamber/S06/s06.crd
   -o    GenConformers.out
 &end
 
 &configs
-  GridSample:1@C2 :1@N :1@C12 :1@C13 { -180.0 180.0 }  Krst 64.0
-  GridSample:1@N :1@C12 :1@C13 :1@N1 { -180.0 180.0 }  Krst 64.0
-  GridSample:1@O :1@C1 :1@N :1@C12 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@C2 :1@N :1@C14 :1@C15 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@N :1@C14 :1@C15 :1@N1 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@O :1@C1 :1@N :1@C14 { -180.0 180.0 }  Krst 64.0
   
   GridSample:1@C1 :1@N :1@C2 :1@C3 { -180.0 180.0 }  Krst 64.0
 
   RandomSample:1@C2 :1@N :1@C1 {  105.0 135.0 }   Krst 256.0
-  RandomSample:1@C2 :1@N :1@C12 {  105.0 135.0 }   Krst 256.0
+  RandomSample:1@C2 :1@N :1@C14 {  105.0 135.0 }   Krst 256.0
 
   combine 1 2 3 4  
   count 10

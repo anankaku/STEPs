@@ -1,6 +1,6 @@
 &files
-  -p    ../../3_antechamber/S01/s01.top
-  -c    ../../3_antechamber/S01/s01.crd
+  -p    ../../3_antechamber/S03/s03.top
+  -c    ../../3_antechamber/S03/s03.crd
   -o    GenConformers.out
 &end
 
