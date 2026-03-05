@@ -1,0 +1,14 @@
+parm ../../3_antechamber/S06/s06.top
+trajin ../../4_mdgx_topology/S06/Conf1.pdb
+trajin ../../4_mdgx_topology/S06/Conf2.pdb
+trajin ../../4_mdgx_topology/S06/Conf3.pdb
+trajin ../../4_mdgx_topology/S06/Conf4.pdb
+trajin ../../4_mdgx_topology/S06/Conf5.pdb
+trajin ../../4_mdgx_topology/S06/Conf6.pdb
+trajin ../../4_mdgx_topology/S06/Conf7.pdb
+trajin ../../4_mdgx_topology/S06/Conf8.pdb
+trajin ../../4_mdgx_topology/S06/Conf9.pdb
+trajin ../../4_mdgx_topology/S06/Conf10.pdb
+trajout coords.cdf netcdf
+run
+quit

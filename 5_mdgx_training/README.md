@@ -3,9 +3,24 @@
     - combine energies into `.dat` file
 - combine all conformers into a `.cdf` file
     - check `.cdf` frames
-    - `cpptraj -p ../3_antechamber/S01/s01.top -y S01/coords.cdf -tl`
+        - `cpptraj -p ../3_antechamber/S01/s01.top -y S01/coords.cdf -tl`
+---
+use `pre_cdf.py` to combine all conformers into a `.cdf` file
+- change file path in `pre_cdf.py`
 ```bash
-# example .cdf file
+# Path to the topology file (used in cpptraj as "parm")
+top_path = Path("../../3_antechamber/S0X/s0X.top")
+
+# Path where make_cdf.in will be written
+output_file = Path("make_cdf.in")
+
+# Directory containing Conf*.pdb files
+pdb_dir = Path("../../4_mdgx_topology/S0X")
+```
+- and follow the instruction in terminal after run `pre_cdf.py`
+
+```bash
+# example .in file
 parm ../../3_antechamber/S01/s01.top
 trajin Conf1.pdb
 trajin Conf2.pdb
@@ -22,8 +37,9 @@ run
 quit
 ```
 
+---
 ## find electron energy of every conformers
-to make energies into one file
+use `extract_energy.py` to make energies into one file
 - `python extract_energy.py your/energy/log/folder`
 - example print out
 ```bash
