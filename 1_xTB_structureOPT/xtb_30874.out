@@ -1,0 +1,45 @@
+===================================================
+Begin TASK Prologue Wed Mar 18 04:16:22 PM EDT 2026
+===================================================
+Job ID:           30874
+Username:         tuu61186
+Group:            icms
+Job Name:         xtb_opt
+Resources List:   nodes=1:ppn=1:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c01
+===================================================
+End TASK Prologue Wed Mar 18 04:16:22 PM EDT 2026
+===================================================
+[INFO] submit_dir = /home/tuu61186/STEPs/1_xTB_structureOPT
+[INFO] pwd        = /home/tuu61186/STEPs/1_xTB_structureOPT
+[INFO] xtb = /home/tuu61186/miniconda3/envs/xtb/bin/xtb
+      -----------------------------------------------------------      
+     |                   =====================                   |     
+     |                           x T B                           |     
+     |                   =====================                   |     
+     |                         S. Grimme                         |     
+     |          Mulliken Center for Theoretical Chemistry        |     
+     |                    University of Bonn                     |     
+      -----------------------------------------------------------      
+
+   * xtb version 6.7.1 (edcfbbe) compiled by 'conda@c0858423619e' on 2025-09-04
+
+[INFO] INPUT  = /home/tuu61186/STEPs/0_openBable_SMILES/out/xyz/STEPs_0001.xyz
+[INFO] OUTDIR = /home/tuu61186/STEPs/1_xTB_structureOPT/runs/STEPs_0001
+[INFO] running STEPs_0001
+[INFO] DONE
+===================================================
+Begin TASK Epilogue Wed Mar 18 04:16:24 PM EDT 2026
+===================================================
+Job ID:           30874
+Username:         tuu61186
+Job Name:         xtb_opt
+Resources List:   nodes=1:ppn=1:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c01
+===================================================
+End TASK Epilogue Wed Mar 18 04:16:24 PM EDT 2026
+===================================================
