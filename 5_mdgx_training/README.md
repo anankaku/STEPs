@@ -69,3 +69,62 @@ Wrote 10 energies -> /home/tuu61186/STEPs/5_mdgx_training/S01/energy.dat
 -826.123654599000
 -826.123654599000
 ```
+---
+## create AMBER 19 env
+- `conda create -n amber19 python=3.8 ambertools=19.11 -c conda-forge`
+- test if mdgx is available
+    - `mdgx -PARAM | head`
+
+
+
+## Running mdgx with Log Output
+
+To capture the full output of `mdgx` (including both standard output and error messages), you can redirect the output to a log file.
+
+### Save output to a log file
+
+```bash
+mdgx -i fit.mdgx > mdgx.log 2>&1
+````
+
+* `>` redirects standard output (stdout) to `mdgx.log`
+* `2>&1` redirects standard error (stderr) to the same file
+
+This ensures that all messages are recorded in a single log file.
+
+---
+
+### View output in terminal and save log simultaneously
+
+```bash
+mdgx -i fit.mdgx 2>&1 | tee mdgx.log
+```
+
+* Output is displayed in the terminal
+* A copy is saved to `mdgx.log`
+
+---
+
+### Inspect the log file
+
+```bash
+head mdgx.log
+tail mdgx.log
+less mdgx.log
+```
+
+---
+
+### Example (AmberTools 19)
+
+```bash
+conda activate amber19
+mdgx -i fit.mdgx 2>&1 | tee mdgx_amber19.log
+```
+
+You can compare logs across versions, e.g.:
+
+* `mdgx_amber19.log`
+* `mdgx_amber24.log`
+
+to diagnose version-dependent behavior.
