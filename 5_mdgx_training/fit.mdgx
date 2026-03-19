@@ -1,18 +1,272 @@
 &files
   -parm  ./gaff2.dat
-  -o fit.out
+  -d      STEPsv1.dat
+  -o      fit.out
 &end
 
 &param
  sys ../3_antechamber/S01/s01.top ./S01/coords.cdf ./S01/energy.dat
+ sys ../3_antechamber/S02/s02.top ./S02/coords.cdf ./S02/energy.dat
+ sys ../3_antechamber/S03/s03.top ./S03/coords.cdf ./S03/energy.dat
+ sys ../3_antechamber/S05/s05.top ./S05/coords.cdf ./S05/energy.dat
+ sys ../3_antechamber/S06/s06.top ./S06/coords.cdf ./S06/energy.dat
+  
   ParmOutput frcmod
   eunits hartree,
   verbose 1,
 
+ % Torsion fitting input
+
  fith c3 n c o
+ fith c c3 c3 c3
+
+
+ fith c c3 c3 n
+ fith c c3 n c
+ fith c c3 n c3
+ fith c c3 n ca
+ fith c c3 n ce
+
+ fith c2 ce ce c2
+ fith c2 ce ce ha
+ fith c2 ce ce n
+ fith c2 ce n c
+ fith c2 ce n c3
+ fith c3 c n c3
+ fith c3 c n ca
+ 
+ fith c3 c oh ho
+ 
+ fith c3 c3 c3 c3
+
+ fith c3 c3 c3 hc
+ fith c3 c3 c3 n
+
+ fith c3 c3 c3 n3
+ fith c3 c3 c3 oh
+ 
+ fith c3 c3 ca ca
+ fith c3 c3 n c
+
+ fith c3 c3 n3 c3
+ fith c3 c3 n3 hn
+ fith c3 c3 oh ho
+ fith c3 c3 os c3
+
+ fith c3 c3 ss c3
+ 
  fith c3 ca ca ca
+ 
+ 
+ fith ca c3 c3 n
+ fith ca c3 ca ca
+ 
  fith ca ca ca ca
+ fith ca ca ca cc
+ fith ca ca ca cl
+ 
  fith ca ca ca f
+ fith ca ca ca ha
+ fith ca ca ca n
+ fith ca ca ca na
+ fith ca ca ca nh
+ fith ca ca ca no
+ fith ca ca ca oh
+ fith ca ca cc c3
+ fith ca ca cc cd
+ 
+ fith ca ca cp cp
+ fith ca ca n c
+ 
+ fith ca ca no o
+ fith ca ca oh ho
+ 
+ fith ca cp cp ca
+ 
+ 
+ fith ce ce n c
+ fith ce ce n c3
+ 
+ 
+ fith h1 c3 c3 oh
+ fith h1 c3 c3 os
+ 
+ fith h1 c3 cx cx
+ fith h1 c3 cx hc
+ fith h1 c3 n c
+ 
+ fith h1 c3 n2 c2
+ fith h1 c3 n3 c3
+ 
+ fith h1 c3 oh ho
+ fith h1 c3 os c3
+ fith h1 c3 sh hs
+ fith h1 c3 ss c3
+ 
+ 
+ fith ha ca cp ca
+ 
+ fith hc c3 c3 hc
+ 
+ fith hc c3 c3 n3
+ fith hc c3 c3 oh
+ fith hc c3 c3 os
+ fith hc c3 ca ca
+ 
+ fith n c c3 c3
+ 
+ fith n c c3 n
+ 
+ fith n c3 c3 oh
+ 
+ fith n c3 c3 sh
+ 
+ fith n c3 cx cx
+ fith n c3 cx hc
+ 
+ fith o c c3 c3
+ fith o c c3 h1
+ fith o c c3 hc
+ 
+ fith o c n c3
+ 
+ fith o c n hn
+ fith o c oh ho
+ 
+ fith c c3 c3 h1
+ fith c c3 c3 hc
+ fith c2 c3 c3 c2
+ fith c2 c3 c3 c3
+ fith c2 c3 c3 hc
+ fith c3 c n ce
+ fith c3 c n hn
+ fith c3 c2 ce ce
+ fith c3 c2 ce ha
+ fith c3 c2 ce n
+ fith c3 c3 c3 ca
+ fith c3 c3 c3 h1
+ fith c3 c3 c3 n2
+ fith c3 c3 c3 os
+ fith c3 c3 n c3
+ fith c3 c3 n2 c2
+ fith c3 c3 sh hs
+ fith c3 ca ca c3
+ fith c3 ca ca cl
+ fith c3 ca ca f
+ fith c3 ca ca ha
+ fith c3 ca ca n
+ fith c3 ca ca oh
+ fith c3 cc cd h4
+ fith c3 cc cd na
+ fith c3 cc nc cd
+ fith c3 cx cx cx
+ fith c3 cx cx hc
+ fith ca c3 c3 h1
+ fith ca c3 c3 hc
+ fith ca c3 n c
+ fith ca c3 n c3
+ fith ca c3 n3 c3
+ fith ca ca ca cp
+ fith ca ca cp ca
+ fith ca ca n c3
+ fith ca ca na cd
+ fith ca ca na hn
+ fith ca ca nh hn
+ fith ca cc cd h4
+ fith ca cc cd na
+ fith cc c3 n c
+ fith cc c3 n c3
+ fith cc ca ca ha
+ fith cc ca ca na
+ fith cc cd na ca
+ fith cc cd na cd
+ fith cc cd na hn
+ fith cd cc nc cd
+ fith ce c2 c3 c3
+ fith ce c2 c3 hc
+ fith cl ca ca ha
+ fith cp ca ca ha
+ fith cp ca ca n
+ fith cx c3 n c
+ fith cx c3 n c3
+ fith cx cx cx cx
+ fith cx cx cx hc
+ fith f ca ca f
+ fith f ca ca ha
+ fith h1 c3 c3 h1
+ fith h1 c3 c3 hc
+ fith h1 c3 c3 n
+ fith h1 c3 c3 n3
+ fith h1 c3 c3 sh
+ fith h1 c3 c3 ss
+ fith h1 c3 ca ca
+ fith h1 c3 cc ca
+ fith h1 c3 cc cd
+ fith h1 c3 cc nc
+ fith h1 c3 n c3
+ fith h1 c3 n ca
+ fith h1 c3 n ce
+ fith h1 c3 n3 hn
+ fith h2 c3 c3 hc
+ fith h2 c3 n c
+ fith h2 c3 n c3
+ fith h2 c3 oh ho
+ fith h2 c3 sh hs
+ fith h4 cd na ca
+ fith h4 cd na cd
+ fith h4 cd na hn
+ fith h5 cd na cd
+ fith h5 cd na hn
+ fith h5 cd nc cc
+ fith ha c2 c3 c3
+ fith ha c2 c3 hc
+ fith ha c2 ce ce
+ fith ha c2 ce ha
+ fith ha c2 ce n
+ fith ha ca ca ha
+ fith ha ca ca n
+ fith ha ca ca na
+ fith ha ca ca nh
+ fith ha ca ca no
+ fith ha ca ca oh
+ fith ha ca cp cp
+ fith ha ce ce n
+ fith hc c3 c3 n
+ fith hc c3 c3 n2
+ fith hc cx cx hc
+ fith n c c3 h1
+ fith n c c3 hc
+ fith n c3 c3 n3
+ fith n c3 c3 os
+ fith n c3 c3 ss
+ fith n c3 ca ca
+ fith n c3 cc ca
+ fith n c3 cc cd
+ fith n c3 cc nc
+ fith n c3 oh ho
+ fith n c3 sh hs
+ fith n ca ca oh
+ fith n2 c2 nh hn
+ fith n3 c3 ca ca
+ fith na cd nc cc
+ fith nc cc cd h4
+ fith nc cc cd na
+ fith nc cd na cd
+ fith nc cd na hn
+ fith nh c2 n2 c3
+ fith nh c2 nh hn
+ fith o c c3 n
+ fith o c n ca
+ fith o c n ce
+ fith oh c c3 c3
+ fith oh c c3 h1
+ fith oh c c3 hc
+ fith oh c c3 n
+ fith oh c3 n c
+ fith oh c3 n c3
+ fith oh ca ca oh
+ fith sh c3 n c
+ fith sh c3 n c3
 
   torsions 1
   hrst 0.0002,

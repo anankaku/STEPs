@@ -1,0 +1,13 @@
+mdgx >> Read conformation      9 of     14.mdgx >> Read conformation     19 of     23.mdgx >> Read conformation     29 of     32.mdgx >> Read conformation     39 of     41.mdgx >> Read conformation     49 of     50.
+mdgx >> Unique adjustable parameters enumerated.
+mdgx >>     50 conformations read.             
+mdgx >> Parameter keys read.
+MakeTermKey >> Error.  A torsion term for c3   n    c    c3   is not
+MakeTermKey >> found in the parameter files.  Amplitude    0.5000, periodicity
+MakeTermKey >>    3.0000, and phase angle    0.0000 were required.  Data point
+MakeTermKey >> ./S01/coords.cdf, Frame 1 is not completely represented by the parameter files.
+MakeTermKey >> Atoms in this dihedral:
+MakeTermKey >>    UNL  C   
+MakeTermKey >>    UNL  N   
+MakeTermKey >>    UNL  C2  
+MakeTermKey >>    UNL  C3  

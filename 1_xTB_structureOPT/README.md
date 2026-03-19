@@ -133,3 +133,14 @@ If the calculation finishes normally and reports an energy, the installation is 
 * xTB can be used **standalone** without ORCA.
 * ORCA is only required if xTB is invoked as part of an ORCA-based workflow (e.g., mdgx integration).
 * On HPC systems, this Conda-based installation does not require administrator intervention.
+
+---
+## run bash file
+```bash
+# run all xyz file in same folder
+sbatch run_xtb_all.sh
+```
+```bash
+# run single xyz file in chosen file with relative path or exact path
+sbatch run_xtb_single.sh /path/to/your/file.xyz
+```
