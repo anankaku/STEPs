@@ -4,7 +4,7 @@
 <++> Written by David S. Cerutti, Case Group (2009 - 2020)                 <++>
 <++>-----------------------------------------------------------------------<++>
 
-Run on Thu Feb 19 03:22:57 2026
+Run on Thu Mar 19 13:07:10 2026
 <++>-----------------------------------------------------------------------<++>
 
 INPUT LINE TEXT:
@@ -21,14 +21,13 @@ INPUT FILE TEXT:
 &end
 
 &configs
-  GridSample:1@C1 :1@N :1@C8 :1@C9 { -180.0 180.0 }  Krst 64.0
-  GridSample:1@N :1@C8 :1@C9 :1@N1 { -180.0 180.0 }  Krst 64.0
-  GridSample:1@O :1@C1 :1@N :1@C8 { -180.0 180.0 }  Krst 64.0
-  
-  GridSample:1@C1 :1@N :1@C2 :1@C3 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@C4 :1@N1 :1@C3 :1@C2 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@N1 :1@C3 :1@C2 :1@N { -180.0 180.0 }  Krst 64.0
+  GridSample:1@H8 :1@C4 :1@N1 :1@C3 { -180.0 180.0 }  Krst 64.0
+  GridSample:1@C6 :1@C5 :1@N1 :1@C3 { -180.0 180.0 }  Krst 64.0
 
-  RandomSample:1@C2 :1@N :1@C1 {  105.0 135.0 }   Krst 256.0
-  RandomSample:1@C2 :1@N :1@C8 {  105.0 135.0 }   Krst 256.0
+  RandomSample:1@C5 :1@N1 :1@C3 {  105.0 135.0 }   Krst 256.0
+  RandomSample:1@C4 :1@N1 :1@C3 {  105.0 135.0 }   Krst 256.0
 
   combine 1 2 3 4  
   count 10
@@ -54,11 +53,11 @@ INPUT FILE TEXT:
  Statistic                Mean Value    Std. Dev.   Min. Value   Max. Value  
                            (kcal/mol)   (kcal/mol)   (kcal/mol)   (kcal/mol) 
  ------------------------ ------------ ------------ ------------ ------------
- Initial E(Model) (a)          47.9662       0.0000      47.9662      47.9662
+ Initial E(Model) (a)          17.2826       0.0000      17.2826      17.2826
  Initial E(Restraint) (b)       0.0000       0.0000       0.0000       0.0000
- Final E(Model) (c)            36.2372       0.0000      36.2372      36.2372
+ Final E(Model) (c)             7.7114       0.0000       7.7114       7.7114
  Final E(Restraint) (d)         0.0000       0.0000       0.0000       0.0000
- Delta E(Model) (e)           -11.7289       0.0000     -11.7289     -11.7289
+ Delta E(Model) (e)            -9.5712       0.0000      -9.5712      -9.5712
  Delta E(Restraint) (f)         0.0000       0.0000       0.0000       0.0000
 
   (a) The energies of the initial models, without the restraint energy (this 
@@ -83,14 +82,14 @@ INPUT FILE TEXT:
      were printed.  The next section presents counts of configurations passing 
      the basic sanity checks.
 
- - Average steps to convergence:     810 +/-    0
- - Total converged configurations:     1
- - Unconverged configurations:         9
+ - Average steps to convergence:   -2147483648 +/-    0
+ - Total converged configurations:     0
+ - Unconverged configurations:        10
 
  - Average of the maximal residual force
-   on NON-converged configurations:        9.809447e-06 kcal/mol-A
+   on NON-converged configurations:        4.002724e-02 kcal/mol-A
  - Average residual forces on frequently strained atoms:
-     Atom    7, C4   ( 9 configs):         9.809447e-06 kcal/mol-A
+     Atom   15, C11  (10 configs):         4.002724e-02 kcal/mol-A
 
 <++>-----------------------------------------------------------------------<++>
 

@@ -1,0 +1,45 @@
+===================================================
+Begin TASK Prologue Thu Mar 19 01:08:17 PM EDT 2026
+===================================================
+Job ID:           30900
+Username:         tuu61186
+Group:            icms
+Job Name:         g09_array
+Resources List:   nodes=1:ppn=8:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c01
+===================================================
+End TASK Prologue Thu Mar 19 01:08:17 PM EDT 2026
+===================================================
+Running Conf6.com
+Node: c01
+CPUs: 8
+Start: Thu Mar 19 01:08:17 PM EDT 2026
+
+starting g09 C01 job 'Conf6' from 
+
+submitting job to queue 'normal'
+working directory is set to '/home/tuu61186/STEPs/4_mdgx_topology/S01'
+sending output to '/home/tuu61186/STEPs/4_mdgx_topology/S01/Conf6.log'
+nice is set to 19
+
+job /home/tuu61186/STEPs/4_mdgx_topology/S01/Conf6 finished with exit status 0
+
+cleaning up in /tmp/g09-tuu61186-627712123198f145x
+
+removed directory '/tmp/g09-tuu61186-627712123198f145x'
+End: Thu Mar 19 01:08:44 PM EDT 2026
+===================================================
+Begin TASK Epilogue Thu Mar 19 01:08:44 PM EDT 2026
+===================================================
+Job ID:           30900
+Username:         tuu61186
+Job Name:         g09_array
+Resources List:   nodes=1:ppn=8:ntasks=1
+Queue:            normal
+Account:          default
+Nodes:      c01
+===================================================
+End TASK Epilogue Thu Mar 19 01:08:44 PM EDT 2026
+===================================================
