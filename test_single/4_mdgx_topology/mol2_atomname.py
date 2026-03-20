@@ -1,0 +1,288 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+from rdkit import Chem
+from rdkit.Chem import AllChem
+from rdkit.Chem.Draw import rdMolDraw2D
+
+
+# -----------------------------
+# MOL2 parsing (ATOM/BOND)
+# -----------------------------
+def parse_mol2_atoms_bonds(mol2_path: Path) -> Tuple[List[dict], List[Tuple[int, int, str]]]:
+    """
+    Parse MOL2 @<TRIPOS>ATOM and @<TRIPOS>BOND blocks.
+
+    Returns
+    -------
+    atoms : List[dict]
+        Each dict: {id1, name, x, y, z, atype}
+    bonds : List[tuple]
+        Each tuple: (a1_id1, a2_id1, bond_type_str)
+    """
+    atoms: List[dict] = []
+    bonds: List[Tuple[int, int, str]] = []
+
+    in_atom = False
+    in_bond = False
+
+    with mol2_path.open("r", encoding="utf-8", errors="replace") as f:
+        for line in f:
+            s = line.strip()
+            if not s:
+                continue
+            up = s.upper()
+
+            if up.startswith("@<TRIPOS>ATOM"):
+                in_atom, in_bond = True, False
+                continue
+            if up.startswith("@<TRIPOS>BOND"):
+                in_atom, in_bond = False, True
+                continue
+            if up.startswith("@<TRIPOS>"):
+                in_atom, in_bond = False, False
+                continue
+
+            if in_atom:
+                # atom_id atom_name x y z atom_type ...
+                parts = s.split()
+                if len(parts) < 6:
+                    continue
+                atom_id1 = int(parts[0])
+                name = parts[1]
+                x, y, z = float(parts[2]), float(parts[3]), float(parts[4])
+                atype = parts[5]
+                atoms.append({"id1": atom_id1, "name": name, "x": x, "y": y, "z": z, "atype": atype})
+
+            elif in_bond:
+                # bond_id a1 a2 bond_type
+                parts = s.split()
+                if len(parts) < 4:
+                    continue
+                a1 = int(parts[1])
+                a2 = int(parts[2])
+                btype = parts[3].lower()
+                bonds.append((a1, a2, btype))
+
+    if not atoms:
+        raise ValueError(f"[ERROR] No atoms parsed from MOL2: {mol2_path}")
+
+    return atoms, bonds
+
+
+def guess_element(atom_name: str, atom_type: str) -> str:
+    """
+    Guess element symbol from atom_name first; fallback to atom_type.
+
+    Examples
+    --------
+    atom_name: C2 -> C, Cl1 -> Cl, Br12 -> Br
+    atom_type: c3 -> C, n -> N, o -> O, C.3 -> C
+    """
+    # 1) From atom_name: take leading letters
+    letters = ""
+    for ch in atom_name:
+        if ch.isalpha():
+            letters += ch
+        else:
+            break
+    letters = letters.capitalize()
+
+    two = letters[:2]
+    if two in ("Cl", "Br", "Si", "Na", "Li", "Al", "Ca", "Fe", "Zn", "Mg", "Cu", "Mn"):
+        return two
+    if letters:
+        return letters[0]
+
+    # 2) From atom_type
+    t = atom_type.strip()
+    if "." in t:
+        t = t.split(".", 1)[0]
+    t = "".join([c for c in t if c.isalpha()]).capitalize()
+    two = t[:2]
+    if two in ("Cl", "Br", "Si", "Na", "Li", "Al", "Ca", "Fe", "Zn", "Mg", "Cu", "Mn"):
+        return two
+    if t:
+        return t[0]
+
+    return "C"
+
+
+def bondtype_to_rdkit(btype: str) -> Chem.BondType:
+    """
+    Map MOL2 bond types to RDKit bond types (enough for depiction).
+    """
+    if btype in ("1", "single"):
+        return Chem.BondType.SINGLE
+    if btype in ("2", "double"):
+        return Chem.BondType.DOUBLE
+    if btype in ("3", "triple"):
+        return Chem.BondType.TRIPLE
+    if btype == "ar":
+        return Chem.BondType.AROMATIC
+    # am/du/un -> treat as single for robustness
+    return Chem.BondType.SINGLE
+
+
+def build_rdkit_from_mol2(mol2_path: Path) -> Tuple[Chem.Mol, Dict[int, str]]:
+    """
+    Build an RDKit Mol by parsing MOL2 directly (works with GAFF atom types like 'c3').
+
+    Returns
+    -------
+    mol : Chem.Mol
+        RDKit molecule with a conformer using MOL2 coordinates.
+    idx_to_name : Dict[int, str]
+        RDKit atom index (0-based) -> MOL2 atom name
+    """
+    atoms, bonds = parse_mol2_atoms_bonds(mol2_path)
+
+    rw = Chem.RWMol()
+    id1_to_idx: Dict[int, int] = {}
+    idx_to_name: Dict[int, str] = {}
+
+    # Add atoms in MOL2 order
+    for a in atoms:
+        elem = guess_element(a["name"], a["atype"])
+        atom = Chem.Atom(elem)
+        idx = rw.AddAtom(atom)
+        id1_to_idx[a["id1"]] = idx
+        idx_to_name[idx] = a["name"]
+
+    # Add bonds
+    for a1_id1, a2_id1, btype in bonds:
+        i = id1_to_idx.get(a1_id1)
+        j = id1_to_idx.get(a2_id1)
+        if i is None or j is None:
+            continue
+        bt = bondtype_to_rdkit(btype)
+        rw.AddBond(i, j, bt)
+
+        if btype == "ar":
+            rw.GetAtomWithIdx(i).SetIsAromatic(True)
+            rw.GetAtomWithIdx(j).SetIsAromatic(True)
+            b = rw.GetBondBetweenAtoms(i, j)
+            if b is not None:
+                b.SetIsAromatic(True)
+
+    mol = rw.GetMol()
+
+    # Attach MOL2 coordinates as a conformer (not required for 2D drawing, but harmless)
+    conf = Chem.Conformer(mol.GetNumAtoms())
+    for a in atoms:
+        idx = id1_to_idx[a["id1"]]
+        conf.SetAtomPosition(idx, Chem.rdGeometry.Point3D(a["x"], a["y"], a["z"]))
+    mol.RemoveAllConformers()
+    mol.AddConformer(conf, assignId=True)
+
+    # Optional sanitization (can fail for some MOL2s; drawing still works)
+    try:
+        Chem.SanitizeMol(mol)
+    except Exception:
+        pass
+
+    return mol, idx_to_name
+
+
+# -----------------------------
+# 2D drawing with MOL2 atom names
+# -----------------------------
+def draw_2d_with_atom_names(
+    mol: Chem.Mol,
+    idx_to_name: Dict[int, str],
+    out_path: Path,
+    size: Tuple[int, int] = (900, 700),
+    font_scale: float = 0.85,
+    hide_h_labels: bool = False,
+    legend: str = "",
+) -> None:
+    """
+    Draw a 2D depiction and label atoms with MOL2 atom names.
+
+    Implementation detail:
+    - Uses per-atom property 'atomLabel' (compatible across many RDKit builds).
+    """
+    w, h = size
+    ext = out_path.suffix.lower()
+
+    if ext == ".svg":
+        drawer = rdMolDraw2D.MolDraw2DSVG(w, h)
+    elif ext in (".png", ".jpg", ".jpeg"):
+        drawer = rdMolDraw2D.MolDraw2DCairo(w, h)
+    else:
+        raise ValueError("[ERROR] Output must be .png or .svg (or .jpg/.jpeg).")
+
+    # Compute 2D coordinates on a copy
+    m = Chem.Mol(mol)
+    AllChem.Compute2DCoords(m)
+
+    # Set labels via atom properties
+    for i in range(m.GetNumAtoms()):
+        label = idx_to_name.get(i, "")
+        if hide_h_labels and m.GetAtomWithIdx(i).GetAtomicNum() == 1:
+            label = ""
+        m.GetAtomWithIdx(i).SetProp("atomLabel", label)
+
+    opts = drawer.drawOptions()
+    opts.annotationFontScale = float(font_scale)
+    opts.addStereoAnnotation = True
+
+    rdMolDraw2D.PrepareAndDrawMolecule(drawer, m, legend=legend)
+    drawer.FinishDrawing()
+
+    data = drawer.GetDrawingText()
+    if isinstance(data, str):
+        out_path.write_text(data, encoding="utf-8")
+    else:
+        out_path.write_bytes(data)
+
+
+def parse_size(s: str) -> Tuple[int, int]:
+    """
+    Parse W,H string into (width, height).
+    """
+    try:
+        w_str, h_str = s.split(",", 1)
+        return (int(w_str.strip()), int(h_str.strip()))
+    except Exception:
+        raise ValueError("[ERROR] --size must be formatted as W,H (e.g., 900,700).")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(
+        description="Read GAFF-style MOL2 directly and draw a 2D depiction labeled with MOL2 atom names."
+    )
+    ap.add_argument("-i", "--mol2", required=True, help="Input .mol2 (GAFF types like c3 are OK)")
+    ap.add_argument("-o", "--out", required=True, help="Output image path (.png or .svg)")
+    ap.add_argument("--size", default="900,700", help="Image size as W,H (default: 900,700)")
+    ap.add_argument("--font-scale", type=float, default=0.85, help="Label font scale (default: 0.85)")
+    ap.add_argument("--hide-h-labels", action="store_true", help="Hide labels on hydrogen atoms")
+    ap.add_argument("--legend", default="", help="Optional legend text under the molecule")
+    args = ap.parse_args()
+
+    mol2_path = Path(args.mol2).expanduser().resolve()
+    out_path = Path(args.out).expanduser().resolve()
+    size = parse_size(args.size)
+
+    mol, idx_to_name = build_rdkit_from_mol2(mol2_path)
+    draw_2d_with_atom_names(
+        mol=mol,
+        idx_to_name=idx_to_name,
+        out_path=out_path,
+        size=size,
+        font_scale=args.font_scale,
+        hide_h_labels=args.hide_h_labels,
+        legend=args.legend,
+    )
+
+    print(f"[OK] Wrote: {out_path}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,33 @@
+echo
+start JOBNAME
+memory total 4 gb
+
+title JOBNAME
+
+geometry units angstroms print xyz
+GEOMETRY_PLACEHOLDER
+end
+
+charge 0
+
+basis
+  C library 6-311++G**
+  N library 6-311++G**
+  O library 6-311++G**
+  H library 6-311++G**
+end
+
+dft
+  xc b3lyp
+  iterations 150
+  direct
+  noio
+end
+
+task dft energy
+
+esp
+  # TODO: add constrain lines here
+end
+
+task esp
