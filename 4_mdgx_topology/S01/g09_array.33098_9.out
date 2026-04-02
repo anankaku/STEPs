@@ -1,21 +1,21 @@
 ===================================================
-Begin TASK Prologue Thu Mar 19 01:08:17 PM EDT 2026
+Begin TASK Prologue Tue Mar 31 02:49:28 PM EDT 2026
 ===================================================
-Job ID:           30893
+Job ID:           33098
 Username:         tuu61186
 Group:            icms
 Job Name:         g09_array
 Resources List:   nodes=1:ppn=8:ntasks=1
 Queue:            normal
 Account:          default
-Nodes:      c02
+Nodes:      c11
 ===================================================
-End TASK Prologue Thu Mar 19 01:08:17 PM EDT 2026
+End TASK Prologue Tue Mar 31 02:49:28 PM EDT 2026
 ===================================================
 Running Conf9.com
-Node: c02
+Node: c11
 CPUs: 8
-Start: Thu Mar 19 01:08:17 PM EDT 2026
+Start: Tue Mar 31 02:49:34 PM EDT 2026
 
 starting g09 C01 job 'Conf9' from 
 
@@ -26,7 +26,7 @@ nice is set to 19
 
 job /home/tuu61186/STEPs/4_mdgx_topology/S01/Conf9 finished with exit status 0
 
-cleaning up in /tmp/g09-tuu61186-396657123198f145x
+cleaning up in /tmp/g09-tuu61186-23270566be56be73cx
 
-removed directory '/tmp/g09-tuu61186-396657123198f145x'
-End: Thu Mar 19 01:08:41 PM EDT 2026
+removed directory '/tmp/g09-tuu61186-23270566be56be73cx'
+End: Tue Mar 31 02:49:56 PM EDT 2026

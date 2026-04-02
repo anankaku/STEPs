@@ -1,13 +1,14 @@
-mdgx >> Read conformation      9 of     14.mdgx >> Read conformation     19 of     23.mdgx >> Read conformation     29 of     32.mdgx >> Read conformation     39 of     41.mdgx >> Read conformation     49 of     50.
+mdgx >> Read conformation      9 of     10.mdgx >> Computed energy for conformation      0 of     10.mdgx >> Computed energy for conformation      1 of     10.mdgx >> Computed energy for conformation      2 of     10.mdgx >> Computed energy for conformation      3 of     10.mdgx >> Computed energy for conformation      4 of     10.mdgx >> Computed energy for conformation      5 of     10.mdgx >> Computed energy for conformation      6 of     10.mdgx >> Computed energy for conformation      7 of     10.mdgx >> Computed energy for conformation      8 of     10.mdgx >> Computed energy for conformation      9 of     10.mdgx >> Solving LLSP for column     1 of    12mdgx >> Solving LLSP for column     2 of    12mdgx >> Solving LLSP for column     3 of    12mdgx >> Solving LLSP for column     4 of    12mdgx >> Solving LLSP for column     5 of    12mdgx >> Solving LLSP for column     6 of    12mdgx >> Solving LLSP for column     7 of    12mdgx >> Solving LLSP for column     8 of    12mdgx >> Solving LLSP for column     9 of    12mdgx >> Solving LLSP for column    10 of    12mdgx >> Solving LLSP for column    11 of    12mdgx >> Solving LLSP for column    12 of    12mdgx >> Detailing parameter    0 of   11.mdgx >> Detailing parameter    1 of   11.mdgx >> Detailing parameter    2 of   11.mdgx >> Detailing parameter    3 of   11.mdgx >> Detailing parameter    4 of   11.mdgx >> Detailing parameter    5 of   11.mdgx >> Detailing parameter    6 of   11.mdgx >> Detailing parameter    7 of   11.mdgx >> Detailing parameter    8 of   11.mdgx >> Detailing parameter    9 of   11.mdgx >> Detailing parameter   10 of   11.
 mdgx >> Unique adjustable parameters enumerated.
-mdgx >>     50 conformations read.             
+mdgx >>     10 conformations read.             
 mdgx >> Parameter keys read.
-MakeTermKey >> Error.  A torsion term for c3   n    c    c3   is not
-MakeTermKey >> found in the parameter files.  Amplitude    0.5000, periodicity
-MakeTermKey >>    3.0000, and phase angle    0.0000 were required.  Data point
-MakeTermKey >> ./S01/coords.cdf, Frame 1 is not completely represented by the parameter files.
-MakeTermKey >> Atoms in this dihedral:
-MakeTermKey >>    UNL  C   
-MakeTermKey >>    UNL  N   
-MakeTermKey >>    UNL  C2  
-MakeTermKey >>    UNL  C3  
+mdgx >> 11 adjustable terms mapped.
+mdgx >>     10 conformations' energies computed.                
+mdgx >> High-energy conformations pruned.
+mdgx >> Energies normalized, conformations weighted.
+mdgx >> Accumulating and checking fitting matrix.
+
+mdgx >> Matrix decomposition complete.
+mdgx >> Descriptions complete for all instances of   11 parameters.
+mdgx >> Parameters written to file STEPsv1.dat.
+mdgx >> Analysis written to file fit.out.

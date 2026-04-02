@@ -1,45 +1,45 @@
 ===================================================
-Begin TASK Prologue Thu Mar 19 01:08:17 PM EDT 2026
+Begin TASK Prologue Tue Mar 31 02:49:28 PM EDT 2026
 ===================================================
-Job ID:           30899
+Job ID:           33099
 Username:         tuu61186
 Group:            icms
 Job Name:         g09_array
 Resources List:   nodes=1:ppn=8:ntasks=1
 Queue:            normal
 Account:          default
-Nodes:      c01
+Nodes:      c10
 ===================================================
-End TASK Prologue Thu Mar 19 01:08:17 PM EDT 2026
+End TASK Prologue Tue Mar 31 02:49:28 PM EDT 2026
 ===================================================
-Running Conf5.com
-Node: c01
+Running Conf10.com
+Node: c10
 CPUs: 8
-Start: Thu Mar 19 01:08:17 PM EDT 2026
+Start: Tue Mar 31 02:49:29 PM EDT 2026
 
-starting g09 C01 job 'Conf5' from 
+starting g09 C01 job 'Conf10' from 
 
 submitting job to queue 'normal'
 working directory is set to '/home/tuu61186/STEPs/4_mdgx_topology/S01'
-sending output to '/home/tuu61186/STEPs/4_mdgx_topology/S01/Conf5.log'
+sending output to '/home/tuu61186/STEPs/4_mdgx_topology/S01/Conf10.log'
 nice is set to 19
 
-job /home/tuu61186/STEPs/4_mdgx_topology/S01/Conf5 finished with exit status 0
+job /home/tuu61186/STEPs/4_mdgx_topology/S01/Conf10 finished with exit status 0
 
-cleaning up in /tmp/g09-tuu61186-627716123198f145x
+cleaning up in /tmp/g09-tuu61186-221545116abfbf5d1x
 
-removed directory '/tmp/g09-tuu61186-627716123198f145x'
-End: Thu Mar 19 01:08:44 PM EDT 2026
+removed directory '/tmp/g09-tuu61186-221545116abfbf5d1x'
+End: Tue Mar 31 02:49:56 PM EDT 2026
 ===================================================
-Begin TASK Epilogue Thu Mar 19 01:08:44 PM EDT 2026
+Begin TASK Epilogue Tue Mar 31 02:49:56 PM EDT 2026
 ===================================================
-Job ID:           30899
+Job ID:           33099
 Username:         tuu61186
 Job Name:         g09_array
 Resources List:   nodes=1:ppn=8:ntasks=1
 Queue:            normal
 Account:          default
-Nodes:      c01
+Nodes:      c10
 ===================================================
-End TASK Epilogue Thu Mar 19 01:08:44 PM EDT 2026
+End TASK Epilogue Tue Mar 31 02:49:56 PM EDT 2026
 ===================================================

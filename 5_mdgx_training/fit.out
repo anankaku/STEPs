@@ -1,0 +1,473 @@
+<++>-----------------------------------------------------------------------<++>
+<++> mdgx: A molecular dynamics engine in the AMBER suite of programs      <++>
+<++>                                                                       <++>
+<++> Written by David S. Cerutti, Case Group (2009)                        <++>
+<++>-----------------------------------------------------------------------<++>
+
+Run on Tue Mar 31 14:54:17 2026
+<++>-----------------------------------------------------------------------<++>
+
+INPUT LINE TEXT:
+
+mdgx -i fit.mdgx 
+
+
+INPUT FILE TEXT:
+
+&files
+  -parm  ./gaff2.dat
+  -d      STEPsv1.dat
+  -o      fit.out
+&end
+
+&param
+ sys ../3_antechamber/S01/s01.top ./S01/coords.cdf ./S01/energy.dat
+
+  
+  ParmOutput frcmod
+  eunits hartree,
+  verbose 1,
+
+ % Torsion fitting input
+
+ fith c3 n c o
+ fith c c3 c3 c3
+
+
+ fith c c3 c3 n
+ fith c c3 n c
+ fith c c3 n c3
+ fith c c3 n ca
+ fith c c3 n ce
+
+ fith c2 ce ce c2
+ fith c2 ce ce ha
+ fith c2 ce ce n
+ fith c2 ce n c
+ fith c2 ce n c3
+ fith c3 c n c3
+ fith c3 c n ca
+ 
+ fith c3 c oh ho
+ 
+ fith c3 c3 c3 c3
+
+ fith c3 c3 c3 hc
+ fith c3 c3 c3 n
+
+ fith c3 c3 c3 n3
+ fith c3 c3 c3 oh
+ 
+ fith c3 c3 ca ca
+ fith c3 c3 n c
+
+ fith c3 c3 n3 c3
+ fith c3 c3 n3 hn
+ fith c3 c3 oh ho
+ fith c3 c3 os c3
+
+ fith c3 c3 ss c3
+ 
+ fith c3 ca ca ca
+ 
+ 
+ fith ca c3 c3 n
+ fith ca c3 ca ca
+ 
+ fith ca ca ca ca
+ fith ca ca ca cc
+ fith ca ca ca cl
+ 
+ fith ca ca ca f
+ fith ca ca ca ha
+ fith ca ca ca n
+ fith ca ca ca na
+ fith ca ca ca nh
+ fith ca ca ca no
+ fith ca ca ca oh
+ fith ca ca cc c3
+ fith ca ca cc cd
+ 
+ fith ca ca cp cp
+ fith ca ca n c
+ 
+ fith ca ca no o
+ fith ca ca oh ho
+ 
+ fith ca cp cp ca
+ 
+ 
+ fith ce ce n c
+ fith ce ce n c3
+ 
+ 
+ fith h1 c3 c3 oh
+ fith h1 c3 c3 os
+ 
+ fith h1 c3 cx cx
+ fith h1 c3 cx hc
+ fith h1 c3 n c
+ 
+ fith h1 c3 n2 c2
+ fith h1 c3 n3 c3
+ 
+ fith h1 c3 oh ho
+ fith h1 c3 os c3
+ fith h1 c3 sh hs
+ fith h1 c3 ss c3
+ 
+ 
+ fith ha ca cp ca
+ 
+ fith hc c3 c3 hc
+ 
+ fith hc c3 c3 n3
+ fith hc c3 c3 oh
+ fith hc c3 c3 os
+ fith hc c3 ca ca
+ 
+ fith n c c3 c3
+ 
+ fith n c c3 n
+ 
+ fith n c3 c3 oh
+ 
+ fith n c3 c3 sh
+ 
+ fith n c3 cx cx
+ fith n c3 cx hc
+ 
+ fith o c c3 c3
+ fith o c c3 h1
+ fith o c c3 hc
+ 
+ fith o c n c3
+ 
+ fith o c n hn
+ fith o c oh ho
+ 
+ fith c c3 c3 h1
+ fith c c3 c3 hc
+ fith c2 c3 c3 c2
+ fith c2 c3 c3 c3
+ fith c2 c3 c3 hc
+ fith c3 c n ce
+ fith c3 c n hn
+ fith c3 c2 ce ce
+ fith c3 c2 ce ha
+ fith c3 c2 ce n
+ fith c3 c3 c3 ca
+ fith c3 c3 c3 h1
+ fith c3 c3 c3 n2
+ fith c3 c3 c3 os
+ fith c3 c3 n c3
+ fith c3 c3 n2 c2
+ fith c3 c3 sh hs
+ fith c3 ca ca c3
+ fith c3 ca ca cl
+ fith c3 ca ca f
+ fith c3 ca ca ha
+ fith c3 ca ca n
+ fith c3 ca ca oh
+ fith c3 cc cd h4
+ fith c3 cc cd na
+ fith c3 cc nc cd
+ fith c3 cx cx cx
+ fith c3 cx cx hc
+ fith ca c3 c3 h1
+ fith ca c3 c3 hc
+ fith ca c3 n c
+ fith ca c3 n c3
+ fith ca c3 n3 c3
+ fith ca ca ca cp
+ fith ca ca cp ca
+ fith ca ca n c3
+ fith ca ca na cd
+ fith ca ca na hn
+ fith ca ca nh hn
+ fith ca cc cd h4
+ fith ca cc cd na
+ fith cc c3 n c
+ fith cc c3 n c3
+ fith cc ca ca ha
+ fith cc ca ca na
+ fith cc cd na ca
+ fith cc cd na cd
+ fith cc cd na hn
+ fith cd cc nc cd
+ fith ce c2 c3 c3
+ fith ce c2 c3 hc
+ fith cl ca ca ha
+ fith cp ca ca ha
+ fith cp ca ca n
+ fith cx c3 n c
+ fith cx c3 n c3
+ fith cx cx cx cx
+ fith cx cx cx hc
+ fith f ca ca f
+ fith f ca ca ha
+ fith h1 c3 c3 h1
+ fith h1 c3 c3 hc
+ fith h1 c3 c3 n
+ fith h1 c3 c3 n3
+ fith h1 c3 c3 sh
+ fith h1 c3 c3 ss
+ fith h1 c3 ca ca
+ fith h1 c3 cc ca
+ fith h1 c3 cc cd
+ fith h1 c3 cc nc
+ fith h1 c3 n c3
+ fith h1 c3 n ca
+ fith h1 c3 n ce
+ fith h1 c3 n3 hn
+ fith h2 c3 c3 hc
+ fith h2 c3 n c
+ fith h2 c3 n c3
+ fith h2 c3 oh ho
+ fith h2 c3 sh hs
+ fith h4 cd na ca
+ fith h4 cd na cd
+ fith h4 cd na hn
+ fith h5 cd na cd
+ fith h5 cd na hn
+ fith h5 cd nc cc
+ fith ha c2 c3 c3
+ fith ha c2 c3 hc
+ fith ha c2 ce ce
+ fith ha c2 ce ha
+ fith ha c2 ce n
+ fith ha ca ca ha
+ fith ha ca ca n
+ fith ha ca ca na
+ fith ha ca ca nh
+ fith ha ca ca no
+ fith ha ca ca oh
+ fith ha ca cp cp
+ fith ha ce ce n
+ fith hc c3 c3 n
+ fith hc c3 c3 n2
+ fith hc cx cx hc
+ fith n c c3 h1
+ fith n c c3 hc
+ fith n c3 c3 n3
+ fith n c3 c3 os
+ fith n c3 c3 ss
+ fith n c3 ca ca
+ fith n c3 cc ca
+ fith n c3 cc cd
+ fith n c3 cc nc
+ fith n c3 oh ho
+ fith n c3 sh hs
+ fith n ca ca oh
+ fith n2 c2 nh hn
+ fith n3 c3 ca ca
+ fith na cd nc cc
+ fith nc cc cd h4
+ fith nc cc cd na
+ fith nc cd na cd
+ fith nc cd na hn
+ fith nh c2 n2 c3
+ fith nh c2 nh hn
+ fith o c c3 n
+ fith o c n ca
+ fith o c n ce
+ fith oh c c3 c3
+ fith oh c c3 h1
+ fith oh c c3 hc
+ fith oh c c3 n
+ fith oh c3 n c
+ fith oh c3 n c3
+ fith oh ca ca oh
+ fith sh c3 n c
+ fith sh c3 n c3
+
+  torsions 1
+  hrst 0.0002,
+&end
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(1.) Energies of each system, according to the fitted parameters.  Units on 
+     errors are kcal/mol.  The original model's energies are compared to 
+     target energies after applying an offset to make the average of each set 
+     of energies for any given system equal (see Section 3).
+
+                      RMS Error         Correlation    Fitted   Fitted   Model
+      System        Orig    Fitted    Orig    Fitted   Terms    Energy   Diff.
+ ----------------  -------  -------  -------  -------  ------  -------  -------
+ ../3_antechamber   0.0000   0.0000   0.0000   0.0000      11     2.28    0.000
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(2.) Parameter sampling.  Bonds and angles are binned over 18 intervals based 
+     on deviations, positive or negative, from the ideal bond length.  Each 
+     interval represents 0.028 Angstrom or 0.023 radian deviation for bonds or 
+     angles, respectively.  Dihedrals and impropers are binned at 10-degree 
+     intervals, ranging from zero to 180 (the range of the arccosine 
+     function).
+
+ Sampling histogram key:  (zero)   . : = e o U O 0 @ X ( > ten)
+
+ Torsion term sampling:
+                              Bins in Radians 
+  Term  Amber Types   Count  -PI     +0      PI   Fitted  Original
+  ----  -----------  ------- ------------------  -------- --------
+  DIHE  X  c  c3 X        40 X     X  X  X           0.00     0.00
+  DIHE  X  c  n  X        40         X        X      0.00     2.50
+  DIHE  X  c3 ca X        60 X  X  X  X  X  X       -0.00     0.00
+  DIHE  X  c3 n  X        60    X     X     X        0.00     0.00
+  DIHE  X  c3 n3 X        40 X    X     XX           0.00     0.30
+  DIHE  X  ca ca X       240 X       XX       X     -0.00     3.62
+  DIHE  h1 c3 c  o        20    X           X        0.00     0.80
+  DIHE  h1 c3 c  o        20    X           X        0.00     0.08
+  DIHE  c3 n  c  c3       20         X        X      0.00     0.50
+  DIHE  h1 c3 n3 c3      140 X    XX    XX    X      0.00     0.23
+  DIHE  h1 c3 n  c        60 X     X     X           0.00     0.00
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(3.) Warnings concerning parameter sampling and the fitted values of new 
+     parameters.
+
+  - All parameters pass basic sanity checks.
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(4.) Energy adjustment constants.  These constants are included to bring the 
+     overall energy of quantum mechanical and molecular mechanical 
+     calculations into general agreement so that the fitted parameters can 
+     address the energy differences between multiple states of each system. 
+     Gross differences between quantum and molecular mechanics are first 
+     eliminated by subtracting off the average energy of all states for each 
+     system; these parameters are then included to "mop up."
+
+      System      Adjustment
+ ---------------- ----------
+ ../3_antechamber     2.2769    
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(5.) Fitting matrix analysis.  This is a check against features of the fitting 
+     set that might create a poorly conditioned matrix.
+
+ - No columns with zero data detected
+ - No correlated columns detected
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(6.) Energy contributions of each fitted parameter.  All parameters that 
+     contribute to each system are printed, this time with respect to the 
+     amount of energy that they contribute to the molecular mechanical 
+     system.
+
+ System: ../3_antechamber/S01/s01.top
+                      Energy    Std. Dev.
+
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(7.) Context of each parameter.  Instances of each parameter found in the 
+     fitting conformations are enumerated below.
+
+ [ Parameter ] [ Atom types ]                   Sampling Histogram
+  Residue (Atom Names)                   Count  MIN     +0     MAX  Warnings
+ --------------------------------------- -----  ------------------  --------
+ DIHE X  c  c3 X 
+  UNL (N    C2   C3   H6  )                 10  X     X  X  X     
+  UNL (N    C2   C3   H7  )                 10  X     X  X  X     
+  UNL (N    C2   C3   N1  )                 10  X     X  X  X     
+  UNL (O    C2   C3   N1  )                 10  X     X  X  X     
+ DIHE X  c  n  X 
+  UNL (C    N    C2   O   )                 10          X        X
+  UNL (C    N    C2   C3  )                 10          X        X
+  UNL (C1   N    C2   O   )                 10          X        X
+  UNL (C1   N    C2   C3  )                 10          X        X
+ DIHE X  c3 ca X 
+  UNL (N1   C5   C6   C7  )                 10  X  X  X  X  X  X  
+  UNL (N1   C5   C6   C11 )                 10  X  X  X  X  X  X  
+  UNL (C7   C6   C5   H12 )                 10  X  X  X  X  X  X  
+  UNL (C7   C6   C5   H11 )                 10  X  X  X  X  X  X  
+  UNL (C11  C6   C5   H12 )                 10  X  X  X  X  X  X  
+  UNL (C11  C6   C5   H11 )                 10  X  X  X  X  X  X  
+ DIHE X  c3 n  X 
+  UNL (H1   C    N    C1  )                 10     X     X     X  
+  UNL (H    C    N    C1  )                 10     X     X     X  
+  UNL (H2   C    N    C1  )                 10     X     X     X  
+  UNL (C    N    C1   H5  )                 10     X     X     X  
+  UNL (C    N    C1   H4  )                 10     X     X     X  
+  UNL (C    N    C1   H3  )                 10     X     X     X  
+ DIHE X  c3 n3 X 
+  UNL (C2   C3   N1   C4  )                 10  X    X     XX     
+  UNL (C2   C3   N1   C5  )                 10  X    X     XX     
+  UNL (C3   N1   C5   C6  )                 10  X    X     XX     
+  UNL (C4   N1   C5   C6  )                 10  X    X     XX     
+ DIHE X  ca ca X 
+  UNL (C5   C6   C7   H13 )                 10  X       XX       X
+  UNL (C11  C6   C7   H13 )                 10  X       XX       X
+  UNL (C5   C6   C7   C8  )                 10  X       XX       X
+  UNL (C5   C6   C11  F   )                 10  X       XX       X
+  UNL (C5   C6   C11  C10 )                 10  X       XX       X
+  UNL (C7   C6   C11  F   )                 10  X       XX       X
+  UNL (C7   C6   C11  C10 )                 10  X       XX       X
+  UNL (C6   C7   C8   H14 )                 10  X       XX       X
+  UNL (H13  C7   C8   H14 )                 10  X       XX       X
+  UNL (C6   C7   C8   C9  )                 10  X       XX       X
+  UNL (C8   C7   C6   C11 )                 10  X       XX       X
+  UNL (C7   C8   C9   H15 )                 10  X       XX       X
+  UNL (C9   C8   C7   H13 )                 10  X       XX       X
+  UNL (H14  C8   C9   H15 )                 10  X       XX       X
+  UNL (C7   C8   C9   C10 )                 10  X       XX       X
+  UNL (C8   C9   C10  H16 )                 10  X       XX       X
+  UNL (C10  C9   C8   H14 )                 10  X       XX       X
+  UNL (H15  C9   C10  H16 )                 10  X       XX       X
+  UNL (C8   C9   C10  C11 )                 10  X       XX       X
+  UNL (C11  C10  C9   H15 )                 10  X       XX       X
+  UNL (C9   C10  C11  F   )                 10  X       XX       X
+  UNL (C6   C11  C10  H16 )                 10  X       XX       X
+  UNL (F    C11  C10  H16 )                 10  X       XX       X
+  UNL (C6   C11  C10  C9  )                 10  X       XX       X
+ DIHE h1 c3 c  o 
+  UNL (O    C2   C3   H6  )                 10     X           X  
+  UNL (O    C2   C3   H7  )                 10     X           X  
+ DIHE h1 c3 c  o 
+  UNL (O    C2   C3   H6  )                 10     X           X  
+  UNL (O    C2   C3   H7  )                 10     X           X  
+ DIHE c3 n  c  c3
+  UNL (C    N    C2   C3  )                 10          X        X
+  UNL (C1   N    C2   C3  )                 10          X        X
+ DIHE h1 c3 n3 c3
+  UNL (C3   N1   C4   H9  )                 10  X    XX    XX    X
+  UNL (C3   N1   C4   H10 )                 10  X    XX    XX    X
+  UNL (C3   N1   C4   H8  )                 10  X    XX    XX    X
+  UNL (C3   N1   C5   H12 )                 10  X    XX    XX    X
+  UNL (C3   N1   C5   H11 )                 10  X    XX    XX    X
+  UNL (C4   N1   C5   H12 )                 10  X    XX    XX    X
+  UNL (C4   N1   C5   H11 )                 10  X    XX    XX    X
+  UNL (C4   N1   C3   H6  )                 10  X    XX    XX    X
+  UNL (C4   N1   C3   H7  )                 10  X    XX    XX    X
+  UNL (C5   N1   C4   H9  )                 10  X    XX    XX    X
+  UNL (C5   N1   C4   H10 )                 10  X    XX    XX    X
+  UNL (C5   N1   C4   H8  )                 10  X    XX    XX    X
+  UNL (C5   N1   C3   H6  )                 10  X    XX    XX    X
+  UNL (C5   N1   C3   H7  )                 10  X    XX    XX    X
+ DIHE h1 c3 n  c 
+  UNL (H1   C    N    C2  )                 10  X     X     X     
+  UNL (H    C    N    C2  )                 10  X     X     X     
+  UNL (H2   C    N    C2  )                 10  X     X     X     
+  UNL (C2   N    C1   H5  )                 10  X     X     X     
+  UNL (C2   N    C1   H4  )                 10  X     X     X     
+  UNL (C2   N    C1   H3  )                 10  X     X     X     
+<++>-----------------------------------------------------------------------<++>
+

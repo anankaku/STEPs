@@ -6,46 +6,46 @@ REMARK   4
 REMARK   4 Restraints used to create this configuration:
 REMARK   4
 REMARK   4 Molecular mechanics energy decomposition (kcal/mol):
-REMARK   4   Bond                0.7309
-REMARK   4   Angle               1.7029
-REMARK   4   Dihedral            8.0908 (sum of proper and improper terms)
-REMARK   4   van-der Waals       2.9891 (includes 1-4 interactions)
-REMARK   4   Electrostatic      -5.8023 (includes 1-4 interactions)
+REMARK   4   Bond                0.7884
+REMARK   4   Angle               1.6548
+REMARK   4   Dihedral            2.4663 (sum of proper and improper terms)
+REMARK   4   van-der Waals       3.3869 (includes 1-4 interactions)
+REMARK   4   Electrostatic      -5.7776 (includes 1-4 interactions)
 REMARK   4   Restraints          0.0000
-REMARK   4   Total energy        7.7114 (includes restraint energy)
+REMARK   4   Total energy        2.5189 (includes restraint energy)
 REMARK   4
 CRYST1  200.000  200.000  200.000  90.00  90.00  90.00 P 1 1 1
-ATOM      1 C    UNL A   0      13.335  19.534  16.417
-ATOM      2 N    UNL A   0      12.843  18.190  16.052
-ATOM      3 C1   UNL A   0      11.920  17.519  16.992
-ATOM      4 C2   UNL A   0      13.193  17.612  14.806
-ATOM      5 O    UNL A   0      13.885  18.220  14.004
-ATOM      6 C3   UNL A   0      12.690  16.176  14.512
-ATOM      7 N1   UNL A   0      13.292  15.461  13.361
-ATOM      8 C4   UNL A   0      12.862  15.964  12.045
-ATOM      9 C5   UNL A   0      14.749  15.222  13.455
-ATOM     10 C6   UNL A   0      15.174  14.510  14.735
-ATOM     11 C7   UNL A   0      14.937  13.128  14.867
-ATOM     12 C8   UNL A   0      15.310  12.448  16.039
-ATOM     13 C9   UNL A   0      15.926  13.144  17.091
-ATOM     14 C10  UNL A   0      16.170  14.521  16.971
-ATOM     15 C11  UNL A   0      15.797  15.201  15.798
-ATOM     16 F    UNL A   0      16.044  16.527  15.705
-ATOM     17 H    UNL A   0      13.179  19.724  17.486
-ATOM     18 H1   UNL A   0      12.795  20.290  15.833
-ATOM     19 H2   UNL A   0      14.408  19.606  16.200
-ATOM     20 H3   UNL A   0      11.625  18.205  17.796
-ATOM     21 H4   UNL A   0      12.416  16.646  17.433
-ATOM     22 H5   UNL A   0      11.016  17.198  16.460
-ATOM     23 H6   UNL A   0      11.604  16.236  14.372
-ATOM     24 H7   UNL A   0      12.850  15.578  15.417
-ATOM     25 H8   UNL A   0      11.768  16.034  12.000
-ATOM     26 H9   UNL A   0      13.192  15.282  11.251
-ATOM     27 H10  UNL A   0      13.284  16.956  11.844
-ATOM     28 H11  UNL A   0      15.293  16.169  13.360
-ATOM     29 H12  UNL A   0      15.063  14.597  12.610
-ATOM     30 H13  UNL A   0      14.457  12.580  14.061
-ATOM     31 H14  UNL A   0      15.121  11.382  16.130
-ATOM     32 H15  UNL A   0      16.213  12.617  17.996
-ATOM     33 H16  UNL A   0      16.647  15.057  17.786
+ATOM      1 C    UNL A   0      13.440  19.416  16.479
+ATOM      2 N    UNL A   0      12.879  18.119  16.054
+ATOM      3 C1   UNL A   0      11.991  17.460  17.034
+ATOM      4 C2   UNL A   0      13.150  17.593  14.787
+ATOM      5 O    UNL A   0      13.784  18.220  13.954
+ATOM      6 C3   UNL A   0      12.636  16.158  14.520
+ATOM      7 N1   UNL A   0      13.247  15.471  13.352
+ATOM      8 C4   UNL A   0      12.774  15.950  12.039
+ATOM      9 C5   UNL A   0      14.711  15.255  13.417
+ATOM     10 C6   UNL A   0      15.157  14.563  14.702
+ATOM     11 C7   UNL A   0      14.923  13.184  14.860
+ATOM     12 C8   UNL A   0      15.314  12.525  16.037
+ATOM     13 C9   UNL A   0      15.943  13.238  17.068
+ATOM     14 C10  UNL A   0      16.183  14.612  16.921
+ATOM     15 C11  UNL A   0      15.794  15.272  15.743
+ATOM     16 F    UNL A   0      16.038  16.595  15.623
+ATOM     17 H    UNL A   0      12.818  20.229  16.086
+ATOM     18 H1   UNL A   0      14.463  19.523  16.095
+ATOM     19 H2   UNL A   0      13.470  19.478  17.574
+ATOM     20 H3   UNL A   0      11.715  18.161  17.832
+ATOM     21 H4   UNL A   0      12.506  16.599  17.477
+ATOM     22 H5   UNL A   0      11.073  17.122  16.537
+ATOM     23 H6   UNL A   0      11.548  16.212  14.390
+ATOM     24 H7   UNL A   0      12.818  15.557  15.419
+ATOM     25 H8   UNL A   0      11.678  15.993  12.021
+ATOM     26 H9   UNL A   0      13.105  15.268  11.246
+ATOM     27 H10  UNL A   0      13.169  16.950  11.822
+ATOM     28 H11  UNL A   0      15.238  16.210  13.306
+ATOM     29 H12  UNL A   0      15.019  14.626  12.573
+ATOM     30 H13  UNL A   0      14.433  12.622  14.070
+ATOM     31 H14  UNL A   0      15.127  11.461  16.150
+ATOM     32 H15  UNL A   0      16.243  12.727  17.978
+ATOM     33 H16  UNL A   0      16.671  15.163  17.720
 END

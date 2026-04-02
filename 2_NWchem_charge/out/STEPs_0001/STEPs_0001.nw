@@ -47,7 +47,6 @@ basis
   N library 6-311++G**
   O library 6-311++G**
   H library 6-311++G**
-  F library 6-311++G**
 end
 
 dft

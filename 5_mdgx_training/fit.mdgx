@@ -6,10 +6,7 @@
 
 &param
  sys ../3_antechamber/S01/s01.top ./S01/coords.cdf ./S01/energy.dat
- sys ../3_antechamber/S02/s02.top ./S02/coords.cdf ./S02/energy.dat
- sys ../3_antechamber/S03/s03.top ./S03/coords.cdf ./S03/energy.dat
- sys ../3_antechamber/S05/s05.top ./S05/coords.cdf ./S05/energy.dat
- sys ../3_antechamber/S06/s06.top ./S06/coords.cdf ./S06/energy.dat
+
   
   ParmOutput frcmod
   eunits hartree,
