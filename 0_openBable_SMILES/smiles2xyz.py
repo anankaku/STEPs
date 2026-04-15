@@ -62,6 +62,42 @@ def run(cmd: List[str]) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, text=True, capture_output=True)
 
 
+def format_mol_id(raw_id: Any) -> str:
+    """
+    Format the molecule ID for file naming.
+
+    Rules
+    -----
+    - If the ID is numeric (e.g. 1, 5, 12), convert it to zero-padded 4 digits:
+      0001, 0005, 0012
+    - If the ID is non-numeric (e.g. A01), keep it as-is
+
+    Parameters
+    ----------
+    raw_id : Any
+        Raw ID value from the CSV.
+
+    Returns
+    -------
+    str
+        Formatted ID string.
+
+    Raises
+    ------
+    ValueError
+        If the ID is empty or invalid.
+    """
+    mol_id = str(raw_id).strip()
+
+    if not mol_id or mol_id.lower() == "nan":
+        raise ValueError("empty id")
+
+    try:
+        return f"{int(float(mol_id)):04d}"
+    except ValueError:
+        return mol_id
+
+
 # -----------------------------------------------------------------------------
 # OpenBabel interfaces
 # -----------------------------------------------------------------------------
@@ -165,10 +201,8 @@ def draw_2d_with_indices_from_sdf(
     if mol is None:
         raise ValueError("RDKit failed to read SDF (mol is None)")
 
-    # Compute 2D coordinates for drawing
     AllChem.Compute2DCoords(mol)
 
-    # Annotate each atom with its index
     for atom in mol.GetAtoms():
         atom.SetProp("atomNote", str(atom.GetIdx() + index_base))
 
@@ -225,21 +259,32 @@ def main() -> None:
     """
     Main entry point.
 
-    Pipeline:
-        CSV (SMILES)
-            -> OpenBabel: SMILES -> SDF
-            -> OpenBabel: SDF -> XYZ
-            -> RDKit:     SDF -> 2D PNG (with atom indices)
-            -> CSV:       atom index mapping
+    Pipeline
+    --------
+    CSV (SMILES + ID)
+        -> OpenBabel: SMILES -> SDF
+        -> OpenBabel: SDF -> XYZ
+        -> RDKit:     SDF -> 2D PNG (with atom indices)
+        -> CSV:       atom index mapping
+
+    File naming
+    -----------
+    Output files are named using the CSV ID column instead of row number.
+    Example:
+        id = 1   -> STEPs_0001.sdf
+        id = 12  -> STEPs_0012.sdf
+        id = A01 -> STEPs_A01.sdf
     """
     ap = argparse.ArgumentParser(
         description=(
             "SMILES -> (OpenBabel) SDF -> XYZ, and "
-            "(RDKit) 2D PNG with atom indices using the same SDF atom order."
+            "(RDKit) 2D PNG with atom indices using the same SDF atom order. "
+            "Output files are named using the CSV ID column."
         )
     )
     ap.add_argument("--csv", required=True, help="Input CSV file")
     ap.add_argument("--smiles-col", default="Capped_SMILES", help="Column name containing SMILES")
+    ap.add_argument("--id-col", default="id", help="Column name containing molecule ID")
     ap.add_argument("--outdir", default="out", help="Output directory")
     ap.add_argument("--prefix", default="STEPs", help="Output file name prefix")
     ap.add_argument("--gen3d", action="store_true", help="Use OpenBabel --gen3d for 3D generation")
@@ -248,18 +293,22 @@ def main() -> None:
 
     args = ap.parse_args()
 
-    # Ensure OpenBabel is available
     obabel = require_exe("obabel")
 
-    # Read input CSV
     df = pd.read_csv(args.csv)
+
     if args.smiles_col not in df.columns:
         raise SystemExit(
             f"[ERROR] Missing column '{args.smiles_col}'. "
             f"Found: {list(df.columns)}"
         )
 
-    # Prepare output directories
+    if args.id_col not in df.columns:
+        raise SystemExit(
+            f"[ERROR] Missing column '{args.id_col}'. "
+            f"Found: {list(df.columns)}"
+        )
+
     outdir = Path(args.outdir)
     sdf_dir = outdir / "sdf"
     xyz_dir = outdir / "xyz"
@@ -272,10 +321,24 @@ def main() -> None:
     failures: List[Dict[str, Any]] = []
     ok = 0
 
-    # Process each SMILES entry
-    for row_i, smiles in enumerate(df[args.smiles_col].astype(str), start=1):
-        smiles = smiles.strip()
-        name = f"{args.prefix}_{row_i:04d}"
+    # Process each row using the CSV ID for file naming
+    for row_i, row in enumerate(df.to_dict(orient="records"), start=1):
+        smiles = str(row[args.smiles_col]).strip()
+
+        try:
+            mol_id_fmt = format_mol_id(row[args.id_col])
+        except ValueError as e:
+            failures.append(
+                {
+                    "row": row_i,
+                    "reason": str(e),
+                }
+            )
+            continue
+
+        name = f"{args.prefix}_{mol_id_fmt}"
+        # If you want file names to be exactly the ID only, use:
+        # name = mol_id_fmt
 
         out_sdf = sdf_dir / f"{name}.sdf"
         out_xyz = xyz_dir / f"{name}.xyz"
@@ -283,7 +346,14 @@ def main() -> None:
         out_map = map_dir / f"{name}_atommap.csv"
 
         if not smiles or smiles.lower() == "nan":
-            failures.append({"row": row_i, "name": name, "reason": "empty SMILES"})
+            failures.append(
+                {
+                    "row": row_i,
+                    "id": row[args.id_col],
+                    "name": name,
+                    "reason": "empty SMILES",
+                }
+            )
             continue
 
         try:
@@ -324,17 +394,17 @@ def main() -> None:
             failures.append(
                 {
                     "row": row_i,
+                    "id": row[args.id_col],
                     "name": name,
                     "smiles": smiles,
                     "reason": str(e),
                 }
             )
-            # Clean up partial outputs
+
             for p in (out_sdf, out_xyz, out_png, out_map):
                 if p.exists():
                     p.unlink()
 
-    # Summary
     print(f"[SUMMARY] OK: {ok}/{len(df)}  FAIL: {len(failures)}")
     print(f"[OUT] SDF: {sdf_dir}")
     print(f"[OUT] XYZ: {xyz_dir}")
