@@ -4,48 +4,78 @@ REMARK   4 Topology used to create this configuration:
 REMARK   4   ../../3_antechamber/S01/s01.top
 REMARK   4
 REMARK   4 Restraints used to create this configuration:
+REMARK   4 &rst
+REMARK   4  iat=8,7,6,4,
+REMARK   4  r1=-118.6479, r2=-90.0000, r3=-90.0000, r4=-61.3521,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=7,6,4,2,
+REMARK   4  r1=61.3521, r2=90.0000, r3=90.0000, r4=118.6479,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=25,8,7,6,
+REMARK   4  r1=61.3521, r2=90.0000, r3=90.0000, r4=118.6479,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=10,9,7,6,
+REMARK   4  r1=-82.6479, r2=-54.0000, r3=-54.0000, r4=-25.3521,
+REMARK   4  rk2=64.0000, rk3=64.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=9,7,6,
+REMARK   4  r1=103.4547, r2=132.1026, r3=132.1026, r4=160.7505,
+REMARK   4  rk2=256.0000, rk3=256.0000,
+REMARK   4 &end
+REMARK   4 &rst
+REMARK   4  iat=8,7,6,
+REMARK   4  r1=77.1643, r2=105.8122, r3=105.8122, r4=134.4600,
+REMARK   4  rk2=256.0000, rk3=256.0000,
+REMARK   4 &end
 REMARK   4
 REMARK   4 Molecular mechanics energy decomposition (kcal/mol):
-REMARK   4   Bond                0.7884
-REMARK   4   Angle               1.6548
-REMARK   4   Dihedral            2.4663 (sum of proper and improper terms)
-REMARK   4   van-der Waals       3.3869 (includes 1-4 interactions)
-REMARK   4   Electrostatic      -5.7776 (includes 1-4 interactions)
-REMARK   4   Restraints          0.0000
-REMARK   4   Total energy        2.5189 (includes restraint energy)
+REMARK   4   Bond                0.7531
+REMARK   4   Angle               8.5962
+REMARK   4   Dihedral            6.5994 (sum of proper and improper terms)
+REMARK   4   van-der Waals       1.6125 (includes 1-4 interactions)
+REMARK   4   Electrostatic      -4.1698 (includes 1-4 interactions)
+REMARK   4   Restraints          1.3873
+REMARK   4   Total energy       14.7786 (includes restraint energy)
 REMARK   4
 CRYST1  200.000  200.000  200.000  90.00  90.00  90.00 P 1 1 1
-ATOM      1 C    UNL A   0      13.440  19.416  16.479
-ATOM      2 N    UNL A   0      12.879  18.119  16.054
-ATOM      3 C1   UNL A   0      11.991  17.460  17.034
-ATOM      4 C2   UNL A   0      13.150  17.593  14.787
-ATOM      5 O    UNL A   0      13.784  18.220  13.954
-ATOM      6 C3   UNL A   0      12.636  16.158  14.520
-ATOM      7 N1   UNL A   0      13.247  15.471  13.352
-ATOM      8 C4   UNL A   0      12.774  15.950  12.039
-ATOM      9 C5   UNL A   0      14.711  15.255  13.417
-ATOM     10 C6   UNL A   0      15.157  14.563  14.702
-ATOM     11 C7   UNL A   0      14.923  13.184  14.860
-ATOM     12 C8   UNL A   0      15.314  12.525  16.037
-ATOM     13 C9   UNL A   0      15.943  13.238  17.068
-ATOM     14 C10  UNL A   0      16.183  14.612  16.921
-ATOM     15 C11  UNL A   0      15.794  15.272  15.743
-ATOM     16 F    UNL A   0      16.038  16.595  15.623
-ATOM     17 H    UNL A   0      12.818  20.229  16.086
-ATOM     18 H1   UNL A   0      14.463  19.523  16.095
-ATOM     19 H2   UNL A   0      13.470  19.478  17.574
-ATOM     20 H3   UNL A   0      11.715  18.161  17.832
-ATOM     21 H4   UNL A   0      12.506  16.599  17.477
-ATOM     22 H5   UNL A   0      11.073  17.122  16.537
-ATOM     23 H6   UNL A   0      11.548  16.212  14.390
-ATOM     24 H7   UNL A   0      12.818  15.557  15.419
-ATOM     25 H8   UNL A   0      11.678  15.993  12.021
-ATOM     26 H9   UNL A   0      13.105  15.268  11.246
-ATOM     27 H10  UNL A   0      13.169  16.950  11.822
-ATOM     28 H11  UNL A   0      15.238  16.210  13.306
-ATOM     29 H12  UNL A   0      15.019  14.626  12.573
-ATOM     30 H13  UNL A   0      14.433  12.622  14.070
-ATOM     31 H14  UNL A   0      15.127  11.461  16.150
-ATOM     32 H15  UNL A   0      16.243  12.727  17.978
-ATOM     33 H16  UNL A   0      16.671  15.163  17.720
+ATOM      1 C    UNL A   0      12.260  18.855  15.296
+ATOM      2 N    UNL A   0      12.635  17.591  15.961
+ATOM      3 C1   UNL A   0      13.082  17.733  17.359
+ATOM      4 C2   UNL A   0      12.450  16.324  15.398
+ATOM      5 O    UNL A   0      12.418  15.317  16.083
+ATOM      6 C3   UNL A   0      12.371  16.225  13.860
+ATOM      7 N1   UNL A   0      13.696  16.025  13.221
+ATOM      8 C4   UNL A   0      14.297  17.348  12.945
+ATOM      9 C5   UNL A   0      14.592  14.847  13.269
+ATOM     10 C6   UNL A   0      14.940  14.357  14.675
+ATOM     11 C7   UNL A   0      14.446  13.112  15.109
+ATOM     12 C8   UNL A   0      14.750  12.629  16.391
+ATOM     13 C9   UNL A   0      15.563  13.381  17.252
+ATOM     14 C10  UNL A   0      16.081  14.611  16.824
+ATOM     15 C11  UNL A   0      15.780  15.093  15.539
+ATOM     16 F    UNL A   0      16.321  16.263  15.139
+ATOM     17 H    UNL A   0      12.091  19.639  16.044
+ATOM     18 H1   UNL A   0      11.332  18.719  14.727
+ATOM     19 H2   UNL A   0      13.064  19.176  14.625
+ATOM     20 H3   UNL A   0      13.560  18.709  17.507
+ATOM     21 H4   UNL A   0      13.810  16.947  17.599
+ATOM     22 H5   UNL A   0      12.219  17.645  18.030
+ATOM     23 H6   UNL A   0      11.849  17.093  13.441
+ATOM     24 H7   UNL A   0      11.741  15.355  13.636
+ATOM     25 H8   UNL A   0      14.876  17.700  13.806
+ATOM     26 H9   UNL A   0      13.538  18.096  12.684
+ATOM     27 H10  UNL A   0      14.986  17.270  12.094
+ATOM     28 H11  UNL A   0      15.523  15.065  12.731
+ATOM     29 H12  UNL A   0      14.107  14.023  12.731
+ATOM     30 H13  UNL A   0      13.807  12.522  14.458
+ATOM     31 H14  UNL A   0      14.353  11.672  16.719
+ATOM     32 H15  UNL A   0      15.796  13.007  18.245
+ATOM     33 H16  UNL A   0      16.721  15.186  17.487
 END
